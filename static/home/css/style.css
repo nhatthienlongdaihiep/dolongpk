@@ -1,0 +1,568 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-11-2015, 16:39:41
+    Author     : Trung
+*/
+
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+[hidden],
+template {
+    display: none;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    outline: 0;
+    border: none;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    outline: 0;
+}
+
+    a:active, a:hover {
+        outline: 0;
+        text-decoration: none;
+    }
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+img {
+    border: 0;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit; /* 1 */
+    font: inherit; /* 2 */
+    margin: 0; /* 3 */
+    outline: 0;
+    border: none;
+}
+
+button, select {
+    text-transform: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 0;
+}
+
+.left-menu {
+    background: url("../htc_images/bg-left-menu.jpg") no-repeat top #354061;
+    display: inline-block;
+    width: 227px;
+    position: relative;
+}
+
+#leftControl {
+    background: url("../htc_images/bg-left-menu.jpg") no-repeat top #354061;
+    display: inline-block;
+    width: 227px;
+    position: relative;
+}
+
+.logo-left-menu {
+    margin: 0 auto;
+    display: table;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.btn-close-left-menu {
+    position: absolute;
+    /*right: 0;*/
+    left:228px;
+    top: 134px;
+}
+
+.form-user {
+    background: #131830;
+    display: inline-block;
+    width: 227px;
+    padding: 12px 0;
+}
+
+    .form-user span {
+        color: #bd9542;
+        font-family: 'Tahoma';
+        font-size: 13px;
+        display: inline-block;
+        float: left;
+        margin-left: 12px;
+    }
+
+.thoat-user {
+    display: inline-block;
+    text-decoration: underline;
+    color: #616577;
+    font-size: 13px;
+    font-family: 'Tahoma';
+    float: right;
+    margin-right: 7px;
+}
+
+.ds-maychu {
+    display: inline-block;
+}
+
+    .ds-maychu span, .ds-maychu p {
+        display: inline-block;
+        color: #e6d4d4;
+        font-size: 13px;
+        font-family: 'Segoeui';
+    }
+
+    .ds-maychu span {
+        margin: 0 0 6px 11px;
+    }
+
+    .ds-maychu p {
+        margin: 10px 0 6px 11px;
+    }
+
+    .ds-maychu select {
+        color: #2d2d2d;
+        font-size: 13px;
+        font-family: 'Segoeui';
+        background: url(../htc_images/bg-select.png) no-repeat right #fff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        width: 200px;
+        padding: 0px 0 2px 10px;
+        margin-left: 9px;
+        cursor: pointer;
+    }
+
+.form-btn {
+    background: url("../htc_images/bg-btn-all.jpg") no-repeat;
+    margin: 28px 0 0 8px;
+}
+
+.btn-napthe-left-menu {
+    display: inline-block;
+    width: 211px;
+    height: 54px;
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+    .btn-napthe-left-menu img {
+        float: left;
+        margin: 10px 25px 0 16px;
+    }
+
+    .btn-napthe-left-menu p {
+        font-family: 'UTM aptima-bold';
+        color: #603800;
+        font-size: 21px;
+        line-height: 21px;
+        margin: 15px 0 0 0;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+
+    .btn-napthe-left-menu:hover {
+        padding-left: 5px;
+        transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+    }
+
+.form-btn ul li a {
+    height: 42px;
+    display: inline-block;
+    width: 100%;
+    margin-top: 3px;
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+    .form-btn ul li a:hover {
+        padding-left: 5px;
+        transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+    }
+
+.form-btn ul li img {
+    float: left;
+    margin: 7px 12px 0 13px;
+}
+
+.form-btn ul li:nth-child(2) img {
+    margin: 7px 5px 0 13px;
+}
+
+.form-btn ul li p {
+    color: #eec97f;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: 'UTM aptima';
+    float: left;
+    margin: 11px 0 0 0;
+}
+
+.slider-left-menu {
+    margin: 0 8px;
+    display: block;
+    position: relative;
+}
+
+    .slider-left-menu .owl-theme .owl-controls .owl-page.active span {
+        width: 25px;
+        background: #d9b55c;
+    }
+
+    .slider-left-menu .owl-theme .owl-controls .owl-page span {
+        margin: 0 3px;
+        background: #495a6b;
+    }
+
+    .slider-left-menu .owl-theme .owl-controls {
+        margin-top: 0;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+    }
+
+.hotline-left-menu {
+    margin: 0 auto;
+    display: table;
+    margin-bottom: 50px;
+}
+
+/*----Css-dsmc----*/
+.bg-dsmc {
+    background: #282828;
+    display: block;
+}
+
+.wrap-dsmc {
+    width: 740px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    background: url("../htc_images/bg-dsmc.png") no-repeat #fff;
+}
+
+.btn-close-dsmc {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.title-top-dsmc {
+    color: #243e6f;
+    font-size: 26px;
+    line-height: 26px;
+    text-transform: uppercase;
+    font-family: 'UTM aptima-bold';
+    display: inline-block;
+    margin: 19px 0 0 221px;
+}
+
+.form-user-dsmc {
+    width: 350px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 22px;
+    margin-bottom: 30px;
+}
+
+    .form-user-dsmc span {
+        color: #c76f34;
+        font-size: 14px;
+        font-family: 'Tahoma';
+        font-weight: 700;
+        display: inline-block;
+        margin-left: 99px;
+    }
+
+.thoat-dsmc {
+    color: #9d887b;
+    text-decoration: underline;
+    font-size: 12px;
+    font-family: 'Tahoma';
+    font-weight: 400;
+    display: inline-block;
+    float: right;
+    margin-right: 13px;
+}
+
+.thongtin-tk {
+    text-decoration: underline;
+    color: #607089;
+    font-size: 12px;
+    font-family: 'Tahoma';
+    font-weight: 400;
+    display: inline-block;
+    margin: 5px 0 14px 100px;
+}
+
+.form-user-dsmc p {
+    color: #333e5e;
+    font-size: 12px;
+    font-family: 'Tahoma';
+    font-weight: 400;
+    float: left;
+    display: inline-block;
+    margin: 7px 0 0 0;
+}
+
+.form-user-dsmc select {
+    border: 1px solid #818798;
+    background: url(../htc_images/bg-select-dsmc.png) no-repeat 96% #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    height: 30px;
+    width: 176px;
+    cursor: pointer;
+    float: left;
+    margin: 0 2px 0 5px;
+}
+
+.btn-choi-dsmc {
+    width: 71px;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    background: #c09239;
+    font-size: 15px;
+    font-family: 'Tahoma';
+    font-weight: 400;
+    padding: 6px 0;
+}
+
+.title-big-dsmc {
+    position: relative;
+    color: #243e6f;
+    font-size: 20px;
+    font-family: 'UTM aptima-bold';
+    text-transform: uppercase;
+    width: 300px;
+    display: table;
+    text-align: center;
+    line-height: 20px;
+    margin: 0 auto;
+    margin-bottom: 23px;
+}
+
+    .title-big-dsmc:before, .title-big-dsmc:after {
+        content: "";
+        background: url("../htc_images/icon-muiten-dsmc.png") no-repeat;
+        width: 69px;
+        height: 13px;
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+    }
+
+    .title-big-dsmc:before {
+        left: 0;
+    }
+
+    .title-big-dsmc:after {
+        right: 0;
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Safari */
+        transform: rotate(180deg); /* Standard syntax */
+    }
+
+.nav-big-dsmc-1 {
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 35px;
+}
+
+    .nav-big-dsmc-1 li {
+        float: left;
+        margin: 3px 14px;
+    }
+
+        .nav-big-dsmc-1 li i {
+            background: url(../htc_images/icon-maychu.png) no-repeat;
+            width: 21px;
+            height: 21px;
+            display: inline-block;
+            position: absolute;
+            left: 20px;
+            top: 22px;
+        }
+
+.nav-big-dsmc-2 li i {
+    background: url(../htc_images/icon-maychu.png) no-repeat;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    top: 14px;
+}
+
+.nav-big-dsmc-1 li a {
+    width: 289px;
+    display: inline-block;
+    position: relative;
+    background: url("../htc_images/bg-maychu.png") no-repeat;
+    height: 50px;
+    padding: 17px 0 0 0;
+    color: #fefefe;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Tahoma';
+}
+
+    .nav-big-dsmc-1 li a img {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+.text-title-2 {
+    width: 342px;
+}
+
+.nav-big-dsmc-2 {
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 4px;
+}
+
+    .nav-big-dsmc-2 li {
+        float: left;
+        margin: 0 7px;
+    }
+
+        .nav-big-dsmc-2 li a {
+            color: #adc3ec;
+            font-size: 18.5px;
+            font-family: 'Tahoma';
+            width: 221px;
+            text-align: center;
+            height: 38px;
+            padding-top: 14px;
+            display: inline-block;
+            position: relative;
+            background: url("../htc_images/bg-maychu.png") no-repeat 0 bottom;
+        }
+
+            .nav-big-dsmc-2 li a img {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+.all-maychudachoi {
+    margin: 35px 0 0 0;
+    padding: 15px 0 0 0;
+    background: #cfd3df;
+    display: block;
+    overflow: hidden;
+}
+
+.btn-xemthem-dsmc {
+    padding: 4px 0 8px 0;
+    width: 690px;
+    text-align: center;
+    display: block;
+    background: #5d6889;
+    color: #bbc3de;
+    font-size: 15px;
+    font-family: 'UTM aptima';
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+
+/* Phân trang*/ 
+/*.phan-trang-article-category {
+    text-align: center;
+}
+
+    .phan-trang-article-category li {
+        display: inline-block;
+        margin: 0px 2px;
+    }
+
+        .phan-trang-article-category li a {
+            display: block;
+            text-align: center;
+            line-height: 16px;
+            width: 26px;
+            height: 16px;
+            border: 1px solid #88452f;
+            border-radius: 3px;
+            color: #88452f;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+            .phan-trang-article-category li a:hover,
+            .phan-trang-article-category li a.active {
+                background: #88452f;
+                color: #fff;
+            }*/
+
+
+
+/* End Phân trang*/
+
+
+
+
+@font-face {
+    src: url(../fonts/Tahoma.ttf);
+    font-family: 'Tahoma';
+}
+
+@font-face {
+    src: url(../fonts/SegoeUI-Bold.ttf);
+    font-family: 'SegoeUI-bold';
+}
+
+@font-face {
+    src: url(../fonts/segoeui.ttf);
+    font-family: 'Segoeui';
+}
+
+@font-face {
+    src: url("../fonts/UTM APTIMABOLD.TTF");
+    font-family: 'UTM aptima-bold';
+}
+
+@font-face {
+    src: url("../fonts/UTM APTIMA.TTF");
+    font-family: 'UTM aptima';
+}

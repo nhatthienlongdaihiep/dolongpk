@@ -1,0 +1,5 @@
+<?php $route['tin-tuc'] ="content/listDetail";
+$route['tin-tuc/(:any)'] ="content/detail/$1";
+$route['su-kien'] ="content/listDetail";
+$route['su-kien/(:any)'] ="content/detail/$1";
+ ?>
