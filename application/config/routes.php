@@ -55,6 +55,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 /* EXTENSION BY ENGINE DIESEL ------------------------------------------------------------------------------------ */
+$route['trang-chu']                           = "home/index";
 $route['landingpage']                         = "home/landingpage";
 $route['admincp']                             = "admincp";
 $route['admincp/menu']                        = "admincp/menu";
@@ -83,18 +84,18 @@ $route['vao-game']                           =  "servers/linkserver";
 
 $route['su-kien']                             = 'content/listdetail';
 $route['su-kien/(:any)']                      = "content/detail/$1";
-$route['cam-nang']                           = 'content/showArticles';
-$route['cam-nang/(:any)']                      = "content/detail/$1";
-$route['tin-tuc']                           = 'content/listdetail';
-$route['tin-tuc/(:any)']                    = "content/detail/$1";
+$route['cam-nang']                            = 'content/showArticles';
+$route['cam-nang/(:any)']                     = "content/detail/$1";
+$route['tin-tuc']                             = 'content/listdetail';
+$route['tin-tuc/(:any)']                      = "content/detail/$1";
 $route['tan-thu']                             = 'content/listdetail';
 $route['tan-thu/(:any)']                      = "content/detail/$1";
 $route['dac-sac']                             = 'content/listdetail';
 $route['dac-sac/(:any)']                      = "content/detail/$1";
-$route['tinh-nang']                             = 'content/listdetail';
+$route['tinh-nang']                           = 'content/listdetail';
 $route['tinh-nang/(:any)']                    = "content/detail/$1";
 
-$route['may-chu']                            = "servers";
+$route['may-chu']                             = "servers";
 $route['choi-game']                           = "servers/playGame";
 $route['choi-game/(:any)']                    = "servers/playGame/$1";
 $route['nap-the']							  = "donate_report/pagedonate_new";
