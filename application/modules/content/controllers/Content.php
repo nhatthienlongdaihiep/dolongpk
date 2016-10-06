@@ -188,7 +188,7 @@ class Content extends MX_Controller
         }
         $detail = $this->model->get('*', 'cli_content',"type = {$type_content} AND slug ='{$slug}'");
         if ($detail){
-            $other = $this->model->fetch('*','cli_content', "type = {$type_content} AND slug != '{$slug}'",'created','desc',0,8);
+            $other = $this->model->fetch('*','cli_content', "type = {$type_content} AND slug != '{$slug}'",'created','desc',0,6);
             $data['parent'] =  $parent;
             $data['result'] = $detail;
             $data['other'] = $other;
@@ -219,7 +219,7 @@ class Content extends MX_Controller
         if($config['total_rows'] != "0"){
             $config['per_page'] = 9;
             $start=$this->input->get('p'); 
-            $data['pageLink'] = pagination($config['total_rows'], $start, $config['per_page']);
+            $data['pageLink'] = pagination_new($config['total_rows'], $start, $config['per_page']);
             $data['result']= $this->model->listDetail($config['per_page'], $start,$type_content);
             $data['parent'] = $parent;
             

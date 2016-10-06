@@ -1,32 +1,35 @@
-<div class="main-content--inner"> 
-    <div class="titile">
-       <div class="where"><a href="<?=PATH_URL?>trang-chu" title="Trang chủ" >Trang chủ</a> &gt;<span class="cur"><a href="<?=PATH_URL.$parent->slug?>" > <?=$parent->name?></a></div>
-       <h3 class="inT"> <?=$parent->name?> </h3>
+<div class="noidung-tintuc1">
+    <div class="tieu-de">
+        <a href="<?=PATH_URL?>trang-chu" style="color:white; text-decoration:none;">trang chủ</a>
+        <img src="<?=PATH_URL?>static/home/images/icon-tintuc.png" alt="">
+        <a href="<?=PATH_URL.$parent->slug?>"><span style="color: #e2c371;"> <?=$parent->name?> </span></a>
+        <img src="<?=PATH_URL?>static/home/images/icon-tintuc.png" alt=""><i> <?=CutText($result->title,80)?> </i>
     </div>
-    <div class="inside">
-           <div class="inbox">
-              <div class="new_top mt10">
-                   <h2><?=CutText($result->title,80)?></h2>
-                   <div class="new_top_txt">
-                      <p class="ny_xsk21">Đăng ngày： <?=date('d/m/Y',strtotime( $result->created ) )?></p>
-                   </div>
-              </div>
-             
-              <div class="news_txt">
-                  <?=$result->content?>
-              </div>
-
-              <div class="fb-comments" data-href="<?=PATH_URL.$parent->slug.'/'.$result->slug ?>" data-width="500px" data-numposts="5" data-colorscheme="dark"></div>
-
-              <div class="hot_art">
-                 <div class="hot_t">Cùng chuyên mục</div>
-                 <div class="hot_art_list clear">
-                    <ul>
-                      <?php if(!empty($other)){ foreach ($other as $k => $vl) {?>                            
-                      <li><span class="fr"><?=date('d-m-Y',strtotime($vl->created))?></span><a href="<?=PATH_URL.$parent->slug.'/'.$vl->slug?>" title="<?=CutText($vl->title,80)?>"><?=CutText($vl->title,60)?></a></li>
-                      <?php } }?>
-                 </div>
-              </div>
-           </div>
+    <em>Đăng ngày : <?=date('d/m/Y')?></em>
+    <div style="margin-left:10px; margin-right: 10px; font-family: Tahoma, Geneva, sans-serif;">
+    <!-- START OF CONTENT DETAIL -->
+    <?= $result->content ?>
+    <!-- END OF CONTENT DETAIL -->
+    </div> 
+    <!-- comment fb-->
+    <div class="fb-comments"
+         data-href="<?=current_url()?>"
+         data-width="720"
+         data-numposts="5">
+    </div> 
+    <!-- end comment fb-->
+    <div class="tintuc-lienquan">Tin tức liên quan<a href="#"><img src="<?=PATH_URL?>static/home/images/them-link.png" alt="" style="margin-top: -15px;"></a></div>
+    <div id="article_refer">
+        <!-- START OF RELATED CONTENT -->
+        <ul class="lien-quan">
+            <?php if($other){ foreach ($other as $vl) { ?>
+            <li>
+                <i></i>
+                <a href="<?=PATH_URL.$parent->slug.'/'.$vl->slug?>"><?= CutText( $vl->title, 80 )?></a>
+                <em><?=date( 'd/m/Y', strtotime($vl->created) )?></em>
+            </li>
+            <?php } } ?>
+        </ul>
+        <!-- START OF RELATED CONTENT -->     
     </div> 
 </div>

@@ -162,6 +162,86 @@ if (!function_exists('pagination')) {
     //pagelistLimited   
 }
 
+if (!function_exists('pagination_new')) {
+    function pagination_new($totalRows, $pageNum = 1, $pageSize, $limit = 3)
+    {
+        settype($totalRows, "int");
+        settype($pageSize, "int");
+        if ($totalRows <= 0)
+            return "";
+        $totalPages = ceil($totalRows / $pageSize);
+        if ($totalPages <= 1)
+            return "";
+        $currentPage = $pageNum;
+        if ($currentPage <= 0 || $currentPage > $totalPages)
+            $currentPage = 1;
+        //From to
+        $form = $currentPage - $limit;
+        $to   = $currentPage + $limit;
+        //Tinh toan From to
+        if ($form <= 0) {
+            $form = 1;
+            $to   = $limit * 2;
+        }
+        ;
+        if ($to > $totalPages)
+            $to = $totalPages;
+        //Tinh toan nut first prev next last
+        $first       = '';
+        $prev        = '';
+        $next        = '';
+        $last        = '';
+        $link        = '';
+        //Link URL
+        $linkUrl     = current_url();
+        $get         = '';
+        $querystring = '';
+        if ($_GET) {
+            foreach ($_GET as $k => $v) {
+                if ($k != 'p')
+                    $querystring = $querystring . "&{$k}={$v}";
+            }
+            $querystring = substr($querystring, 1);
+            $get .= '?' . $querystring;
+        }
+        $sep     = (!empty($querystring)) ? '&' : '';
+        $linkUrl = $linkUrl . '?' . $querystring . $sep . 'p=';
+        if ($currentPage > $limit + 2) {
+            /** first */
+            //$first= "<a href='$linkUrl' class='first'>...</a>&nbsp;";
+        }
+        /*         * **** prev ** */
+        if ($currentPage > 1) {
+            $prevPage = $currentPage - 1;
+            // $prev     = "<a href='$linkUrl$prevPage' class='prev'><b> < </b></a>";
+            $prev     = "<li class='pageprev'><a href='$linkUrl$prevPage' > << </a>";
+        }
+        /*         * *Next** */
+        if ($currentPage < $totalPages) {
+            $nextPage = $currentPage + 1;
+            // $next     = "<a href='$linkUrl$nextPage' class='next'> <b>></b> </a>";
+            $next     = "<li class='pagenext'><a href='$linkUrl$nextPage' > >> </a>";
+        }
+        /*         * *Last** */
+        if ($currentPage < $totalPages - 4) {
+            $lastPage = $totalPages;
+            //$last= "<a href='$linkUrl$lastPage' class='last'>...</a>";
+        }
+        /*         * *Link** */
+        for ($i = $form; $i <= $to; $i++) {
+            if ($currentPage == $i)
+                $link .= "<li><a class='active'> $i </a></li>";
+            else
+                $link .= "<li><a href='$linkUrl$i'>$i</a></li>";
+        }
+
+        
+        $pagination = '<ul class="phan-trang"><ul class="chuyentrang">' . $first . $prev . $link . $next . $last . '</ul></ul>';
+        return $pagination;
+    }
+    //pagelistLimited   
+}
+
 
 if (!function_exists('pagination_ajax')) {
     function pagination_ajax($totalRows, $pageNum = 1, $pageSize, $limit = 3)

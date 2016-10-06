@@ -1487,7 +1487,7 @@ ul.phan-trang {
     text-align: right;
     position: relative;
     z-index: 99;
-    padding-bottom: 55px;
+    padding-bottom: 20px;
 }
 
 .noidung-tintuc1 ul.phan-trang {
@@ -1535,7 +1535,7 @@ ul.phan-trang li {
 }
 
 .noidung-tintuc1 em {
-    padding: 20px 0px 30px 16px;
+    padding: 10px 0px 10px 16px;
     display: block;
 }
 
@@ -1583,7 +1583,8 @@ ul.phan-trang li {
         }
 
 ul.lien-quan {
-    margin-top: 30px;
+    margin-top: 12px;
+    padding: 0 0 10px;
 }
 
     ul.lien-quan li {
