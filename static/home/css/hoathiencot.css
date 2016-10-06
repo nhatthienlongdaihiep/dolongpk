@@ -554,6 +554,7 @@ ul.from-dangnhap li a img {
 /*css may-chu*/
 .may-chu {
     width: 250px;
+    padding: 0 0 4px;
     background: url(../images/bg-maychu.jpg) no-repeat top center #111a31;
     position: relative;
 }
@@ -622,7 +623,7 @@ ul.from-dangnhap li a img {
             position: absolute;
             left: 180px;
             cursor: pointer;
-            margin-top: -57px;
+            margin-top: 0px;
         }
 /*css video*/
 .video {

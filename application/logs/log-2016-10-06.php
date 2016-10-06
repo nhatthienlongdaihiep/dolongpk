@@ -1149,3 +1149,373 @@ DEBUG - 2016-10-06 12:31:45 --> File loaded: D:\xampp\htdocs\dolongky\applicatio
 DEBUG - 2016-10-06 12:31:45 --> File loaded: D:\xampp\htdocs\dolongky\application\views\FRONTEND/template.php
 INFO - 2016-10-06 12:31:45 --> Final output sent to browser
 DEBUG - 2016-10-06 12:31:45 --> Total execution time: 0.0580
+INFO - 2016-10-06 13:40:48 --> Config Class Initialized
+INFO - 2016-10-06 13:40:48 --> Hooks Class Initialized
+DEBUG - 2016-10-06 13:40:48 --> UTF-8 Support Enabled
+INFO - 2016-10-06 13:40:48 --> Utf8 Class Initialized
+INFO - 2016-10-06 13:40:48 --> URI Class Initialized
+INFO - 2016-10-06 13:40:48 --> Router Class Initialized
+INFO - 2016-10-06 13:40:48 --> Output Class Initialized
+INFO - 2016-10-06 13:40:48 --> Security Class Initialized
+DEBUG - 2016-10-06 13:40:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-10-06 13:40:48 --> Input Class Initialized
+INFO - 2016-10-06 13:40:48 --> Language Class Initialized
+INFO - 2016-10-06 13:40:48 --> Language Class Initialized
+INFO - 2016-10-06 13:40:48 --> Config Class Initialized
+INFO - 2016-10-06 13:40:48 --> Loader Class Initialized
+INFO - 2016-10-06 13:40:48 --> Helper loaded: common_helper
+INFO - 2016-10-06 13:40:48 --> Helper loaded: url_helper
+INFO - 2016-10-06 13:40:48 --> Database Driver Class Initialized
+INFO - 2016-10-06 13:40:48 --> Session: Class initialized using 'files' driver.
+INFO - 2016-10-06 13:40:48 --> Parser Class Initialized
+INFO - 2016-10-06 13:40:48 --> Controller Class Initialized
+DEBUG - 2016-10-06 13:40:48 --> Home MX_Controller Initialized
+INFO - 2016-10-06 13:40:48 --> Model Class Initialized
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/models/Home_model.php
+INFO - 2016-10-06 13:40:48 --> Model Class Initialized
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/content/controllers/Content.php
+DEBUG - 2016-10-06 13:40:48 --> Content MX_Controller Initialized
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp_modules/models/Admincp_modules_model.php
+INFO - 2016-10-06 13:40:48 --> Model Class Initialized
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/content/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/slider/controllers/Slider.php
+DEBUG - 2016-10-06 13:40:48 --> Slider MX_Controller Initialized
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/models/Slider_model.php
+INFO - 2016-10-06 13:40:48 --> Model Class Initialized
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/servers/controllers/Servers.php
+DEBUG - 2016-10-06 13:40:48 --> Servers MX_Controller Initialized
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/models/Servers_model.php
+INFO - 2016-10-06 13:40:48 --> Model Class Initialized
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/views/FRONTEND/listServer.php
+ERROR - 2016-10-06 13:40:48 --> Module controller failed to run: banner/index
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/login.php
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/modules/tracking.php
+DEBUG - 2016-10-06 13:40:48 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/template.php
+INFO - 2016-10-06 13:40:48 --> Final output sent to browser
+DEBUG - 2016-10-06 13:40:48 --> Total execution time: 0.0480
+INFO - 2016-10-06 13:41:10 --> Config Class Initialized
+INFO - 2016-10-06 13:41:10 --> Hooks Class Initialized
+DEBUG - 2016-10-06 13:41:10 --> UTF-8 Support Enabled
+INFO - 2016-10-06 13:41:10 --> Utf8 Class Initialized
+INFO - 2016-10-06 13:41:10 --> URI Class Initialized
+INFO - 2016-10-06 13:41:10 --> Router Class Initialized
+INFO - 2016-10-06 13:41:10 --> Output Class Initialized
+INFO - 2016-10-06 13:41:10 --> Security Class Initialized
+DEBUG - 2016-10-06 13:41:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-10-06 13:41:10 --> Input Class Initialized
+INFO - 2016-10-06 13:41:10 --> Language Class Initialized
+INFO - 2016-10-06 13:41:10 --> Language Class Initialized
+INFO - 2016-10-06 13:41:10 --> Config Class Initialized
+INFO - 2016-10-06 13:41:10 --> Loader Class Initialized
+INFO - 2016-10-06 13:41:10 --> Helper loaded: common_helper
+INFO - 2016-10-06 13:41:10 --> Helper loaded: url_helper
+INFO - 2016-10-06 13:41:10 --> Database Driver Class Initialized
+INFO - 2016-10-06 13:41:10 --> Session: Class initialized using 'files' driver.
+INFO - 2016-10-06 13:41:10 --> Parser Class Initialized
+INFO - 2016-10-06 13:41:10 --> Controller Class Initialized
+DEBUG - 2016-10-06 13:41:10 --> Home MX_Controller Initialized
+INFO - 2016-10-06 13:41:10 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/models/Home_model.php
+INFO - 2016-10-06 13:41:10 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/content/controllers/Content.php
+DEBUG - 2016-10-06 13:41:10 --> Content MX_Controller Initialized
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp_modules/models/Admincp_modules_model.php
+INFO - 2016-10-06 13:41:10 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/content/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/slider/controllers/Slider.php
+DEBUG - 2016-10-06 13:41:10 --> Slider MX_Controller Initialized
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/models/Slider_model.php
+INFO - 2016-10-06 13:41:10 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/servers/controllers/Servers.php
+DEBUG - 2016-10-06 13:41:10 --> Servers MX_Controller Initialized
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/models/Servers_model.php
+INFO - 2016-10-06 13:41:10 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/views/FRONTEND/listServer.php
+ERROR - 2016-10-06 13:41:10 --> Module controller failed to run: banner/index
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/login.php
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/modules/tracking.php
+DEBUG - 2016-10-06 13:41:10 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/template.php
+INFO - 2016-10-06 13:41:10 --> Final output sent to browser
+DEBUG - 2016-10-06 13:41:10 --> Total execution time: 0.0610
+INFO - 2016-10-06 13:41:17 --> Config Class Initialized
+INFO - 2016-10-06 13:41:17 --> Hooks Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> UTF-8 Support Enabled
+INFO - 2016-10-06 13:41:17 --> Utf8 Class Initialized
+INFO - 2016-10-06 13:41:17 --> URI Class Initialized
+INFO - 2016-10-06 13:41:17 --> Router Class Initialized
+INFO - 2016-10-06 13:41:17 --> Output Class Initialized
+INFO - 2016-10-06 13:41:17 --> Security Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-10-06 13:41:17 --> Input Class Initialized
+INFO - 2016-10-06 13:41:17 --> Language Class Initialized
+INFO - 2016-10-06 13:41:17 --> Language Class Initialized
+INFO - 2016-10-06 13:41:17 --> Config Class Initialized
+INFO - 2016-10-06 13:41:17 --> Loader Class Initialized
+INFO - 2016-10-06 13:41:17 --> Helper loaded: common_helper
+INFO - 2016-10-06 13:41:17 --> Helper loaded: url_helper
+INFO - 2016-10-06 13:41:17 --> Database Driver Class Initialized
+INFO - 2016-10-06 13:41:17 --> Session: Class initialized using 'files' driver.
+INFO - 2016-10-06 13:41:17 --> Parser Class Initialized
+INFO - 2016-10-06 13:41:17 --> Controller Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> Admincp MX_Controller Initialized
+INFO - 2016-10-06 13:41:17 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp/models/Admincp_model.php
+INFO - 2016-10-06 13:41:17 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp/views/index.php
+DEBUG - 2016-10-06 13:41:17 --> File already loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp/models/Admincp_model.php
+INFO - 2016-10-06 13:41:17 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp/views/getSetting.php
+DEBUG - 2016-10-06 13:41:17 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp_modules/models/Admincp_modules_model.php
+INFO - 2016-10-06 13:41:17 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp_accounts/models/Admincp_accounts_model.php
+INFO - 2016-10-06 13:41:17 --> Model Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp/views/menu.php
+DEBUG - 2016-10-06 13:41:17 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\BACKEND/template.php
+INFO - 2016-10-06 13:41:17 --> Final output sent to browser
+DEBUG - 2016-10-06 13:41:17 --> Total execution time: 0.0510
+INFO - 2016-10-06 13:41:17 --> Config Class Initialized
+INFO - 2016-10-06 13:41:17 --> Hooks Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> UTF-8 Support Enabled
+INFO - 2016-10-06 13:41:17 --> Utf8 Class Initialized
+INFO - 2016-10-06 13:41:17 --> URI Class Initialized
+INFO - 2016-10-06 13:41:17 --> Router Class Initialized
+INFO - 2016-10-06 13:41:17 --> Output Class Initialized
+INFO - 2016-10-06 13:41:17 --> Security Class Initialized
+DEBUG - 2016-10-06 13:41:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-10-06 13:41:17 --> Input Class Initialized
+INFO - 2016-10-06 13:41:17 --> Language Class Initialized
+ERROR - 2016-10-06 13:41:17 --> 404 Page Not Found: /index
+INFO - 2016-10-06 13:42:51 --> Config Class Initialized
+INFO - 2016-10-06 13:42:51 --> Hooks Class Initialized
+DEBUG - 2016-10-06 13:42:51 --> UTF-8 Support Enabled
+INFO - 2016-10-06 13:42:51 --> Utf8 Class Initialized
+INFO - 2016-10-06 13:42:51 --> URI Class Initialized
+INFO - 2016-10-06 13:42:51 --> Router Class Initialized
+INFO - 2016-10-06 13:42:51 --> Output Class Initialized
+INFO - 2016-10-06 13:42:51 --> Security Class Initialized
+DEBUG - 2016-10-06 13:42:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-10-06 13:42:51 --> Input Class Initialized
+INFO - 2016-10-06 13:42:51 --> Language Class Initialized
+INFO - 2016-10-06 13:42:51 --> Language Class Initialized
+INFO - 2016-10-06 13:42:51 --> Config Class Initialized
+INFO - 2016-10-06 13:42:51 --> Loader Class Initialized
+INFO - 2016-10-06 13:42:51 --> Helper loaded: common_helper
+INFO - 2016-10-06 13:42:51 --> Helper loaded: url_helper
+INFO - 2016-10-06 13:42:51 --> Database Driver Class Initialized
+INFO - 2016-10-06 13:42:51 --> Session: Class initialized using 'files' driver.
+INFO - 2016-10-06 13:42:51 --> Parser Class Initialized
+INFO - 2016-10-06 13:42:51 --> Controller Class Initialized
+DEBUG - 2016-10-06 13:42:51 --> Home MX_Controller Initialized
+INFO - 2016-10-06 13:42:51 --> Model Class Initialized
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/models/Home_model.php
+INFO - 2016-10-06 13:42:51 --> Model Class Initialized
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/content/controllers/Content.php
+DEBUG - 2016-10-06 13:42:51 --> Content MX_Controller Initialized
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp_modules/models/Admincp_modules_model.php
+INFO - 2016-10-06 13:42:51 --> Model Class Initialized
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/content/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/slider/controllers/Slider.php
+DEBUG - 2016-10-06 13:42:51 --> Slider MX_Controller Initialized
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/models/Slider_model.php
+INFO - 2016-10-06 13:42:51 --> Model Class Initialized
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/servers/controllers/Servers.php
+DEBUG - 2016-10-06 13:42:51 --> Servers MX_Controller Initialized
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/models/Servers_model.php
+INFO - 2016-10-06 13:42:51 --> Model Class Initialized
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/views/FRONTEND/listServer.php
+ERROR - 2016-10-06 13:42:51 --> Module controller failed to run: banner/index
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/login.php
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/modules/tracking.php
+DEBUG - 2016-10-06 13:42:51 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/template.php
+INFO - 2016-10-06 13:42:51 --> Final output sent to browser
+DEBUG - 2016-10-06 13:42:51 --> Total execution time: 0.0630
+INFO - 2016-10-06 13:43:07 --> Config Class Initialized
+INFO - 2016-10-06 13:43:07 --> Hooks Class Initialized
+DEBUG - 2016-10-06 13:43:07 --> UTF-8 Support Enabled
+INFO - 2016-10-06 13:43:07 --> Utf8 Class Initialized
+INFO - 2016-10-06 13:43:07 --> URI Class Initialized
+INFO - 2016-10-06 13:43:07 --> Router Class Initialized
+INFO - 2016-10-06 13:43:07 --> Output Class Initialized
+INFO - 2016-10-06 13:43:07 --> Security Class Initialized
+DEBUG - 2016-10-06 13:43:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-10-06 13:43:07 --> Input Class Initialized
+INFO - 2016-10-06 13:43:07 --> Language Class Initialized
+INFO - 2016-10-06 13:43:07 --> Language Class Initialized
+INFO - 2016-10-06 13:43:07 --> Config Class Initialized
+INFO - 2016-10-06 13:43:07 --> Loader Class Initialized
+INFO - 2016-10-06 13:43:07 --> Helper loaded: common_helper
+INFO - 2016-10-06 13:43:07 --> Helper loaded: url_helper
+INFO - 2016-10-06 13:43:07 --> Database Driver Class Initialized
+INFO - 2016-10-06 13:43:07 --> Session: Class initialized using 'files' driver.
+INFO - 2016-10-06 13:43:07 --> Parser Class Initialized
+INFO - 2016-10-06 13:43:07 --> Controller Class Initialized
+DEBUG - 2016-10-06 13:43:07 --> Home MX_Controller Initialized
+INFO - 2016-10-06 13:43:07 --> Model Class Initialized
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/models/Home_model.php
+INFO - 2016-10-06 13:43:07 --> Model Class Initialized
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/content/controllers/Content.php
+DEBUG - 2016-10-06 13:43:07 --> Content MX_Controller Initialized
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp_modules/models/Admincp_modules_model.php
+INFO - 2016-10-06 13:43:07 --> Model Class Initialized
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/content/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/slider/controllers/Slider.php
+DEBUG - 2016-10-06 13:43:07 --> Slider MX_Controller Initialized
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/models/Slider_model.php
+INFO - 2016-10-06 13:43:07 --> Model Class Initialized
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/servers/controllers/Servers.php
+DEBUG - 2016-10-06 13:43:07 --> Servers MX_Controller Initialized
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/models/Servers_model.php
+INFO - 2016-10-06 13:43:07 --> Model Class Initialized
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/views/FRONTEND/listServer.php
+ERROR - 2016-10-06 13:43:07 --> Module controller failed to run: banner/index
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/login.php
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/modules/tracking.php
+DEBUG - 2016-10-06 13:43:07 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/template.php
+INFO - 2016-10-06 13:43:07 --> Final output sent to browser
+DEBUG - 2016-10-06 13:43:07 --> Total execution time: 0.0540
+INFO - 2016-10-06 13:44:03 --> Config Class Initialized
+INFO - 2016-10-06 13:44:03 --> Hooks Class Initialized
+DEBUG - 2016-10-06 13:44:03 --> UTF-8 Support Enabled
+INFO - 2016-10-06 13:44:03 --> Utf8 Class Initialized
+INFO - 2016-10-06 13:44:03 --> URI Class Initialized
+INFO - 2016-10-06 13:44:03 --> Router Class Initialized
+INFO - 2016-10-06 13:44:03 --> Output Class Initialized
+INFO - 2016-10-06 13:44:03 --> Security Class Initialized
+DEBUG - 2016-10-06 13:44:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-10-06 13:44:03 --> Input Class Initialized
+INFO - 2016-10-06 13:44:03 --> Language Class Initialized
+INFO - 2016-10-06 13:44:03 --> Language Class Initialized
+INFO - 2016-10-06 13:44:03 --> Config Class Initialized
+INFO - 2016-10-06 13:44:03 --> Loader Class Initialized
+INFO - 2016-10-06 13:44:03 --> Helper loaded: common_helper
+INFO - 2016-10-06 13:44:03 --> Helper loaded: url_helper
+INFO - 2016-10-06 13:44:03 --> Database Driver Class Initialized
+INFO - 2016-10-06 13:44:03 --> Session: Class initialized using 'files' driver.
+INFO - 2016-10-06 13:44:03 --> Parser Class Initialized
+INFO - 2016-10-06 13:44:03 --> Controller Class Initialized
+DEBUG - 2016-10-06 13:44:03 --> Home MX_Controller Initialized
+INFO - 2016-10-06 13:44:03 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/models/Home_model.php
+INFO - 2016-10-06 13:44:03 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/content/controllers/Content.php
+DEBUG - 2016-10-06 13:44:03 --> Content MX_Controller Initialized
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp_modules/models/Admincp_modules_model.php
+INFO - 2016-10-06 13:44:03 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/content/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/slider/controllers/Slider.php
+DEBUG - 2016-10-06 13:44:03 --> Slider MX_Controller Initialized
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/models/Slider_model.php
+INFO - 2016-10-06 13:44:03 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/servers/controllers/Servers.php
+DEBUG - 2016-10-06 13:44:03 --> Servers MX_Controller Initialized
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/models/Servers_model.php
+INFO - 2016-10-06 13:44:03 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/views/FRONTEND/listServer.php
+ERROR - 2016-10-06 13:44:03 --> Module controller failed to run: banner/index
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/login.php
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/modules/tracking.php
+DEBUG - 2016-10-06 13:44:03 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/template.php
+INFO - 2016-10-06 13:44:03 --> Final output sent to browser
+DEBUG - 2016-10-06 13:44:03 --> Total execution time: 0.0670
+INFO - 2016-10-06 13:44:55 --> Config Class Initialized
+INFO - 2016-10-06 13:44:55 --> Hooks Class Initialized
+DEBUG - 2016-10-06 13:44:55 --> UTF-8 Support Enabled
+INFO - 2016-10-06 13:44:55 --> Utf8 Class Initialized
+INFO - 2016-10-06 13:44:55 --> URI Class Initialized
+INFO - 2016-10-06 13:44:55 --> Router Class Initialized
+INFO - 2016-10-06 13:44:55 --> Output Class Initialized
+INFO - 2016-10-06 13:44:55 --> Security Class Initialized
+DEBUG - 2016-10-06 13:44:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-10-06 13:44:55 --> Input Class Initialized
+INFO - 2016-10-06 13:44:55 --> Language Class Initialized
+INFO - 2016-10-06 13:44:55 --> Language Class Initialized
+INFO - 2016-10-06 13:44:55 --> Config Class Initialized
+INFO - 2016-10-06 13:44:55 --> Loader Class Initialized
+INFO - 2016-10-06 13:44:55 --> Helper loaded: common_helper
+INFO - 2016-10-06 13:44:55 --> Helper loaded: url_helper
+INFO - 2016-10-06 13:44:55 --> Database Driver Class Initialized
+INFO - 2016-10-06 13:44:55 --> Session: Class initialized using 'files' driver.
+INFO - 2016-10-06 13:44:55 --> Parser Class Initialized
+INFO - 2016-10-06 13:44:55 --> Controller Class Initialized
+DEBUG - 2016-10-06 13:44:55 --> Home MX_Controller Initialized
+INFO - 2016-10-06 13:44:55 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/models/Home_model.php
+INFO - 2016-10-06 13:44:55 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/content/controllers/Content.php
+DEBUG - 2016-10-06 13:44:55 --> Content MX_Controller Initialized
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp_modules/models/Admincp_modules_model.php
+INFO - 2016-10-06 13:44:55 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/content/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/slider/controllers/Slider.php
+DEBUG - 2016-10-06 13:44:55 --> Slider MX_Controller Initialized
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/models/Slider_model.php
+INFO - 2016-10-06 13:44:55 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/servers/controllers/Servers.php
+DEBUG - 2016-10-06 13:44:55 --> Servers MX_Controller Initialized
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/models/Servers_model.php
+INFO - 2016-10-06 13:44:55 --> Model Class Initialized
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/views/FRONTEND/listServer.php
+ERROR - 2016-10-06 13:44:55 --> Module controller failed to run: banner/index
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/login.php
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/modules/tracking.php
+DEBUG - 2016-10-06 13:44:55 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/template.php
+INFO - 2016-10-06 13:44:55 --> Final output sent to browser
+DEBUG - 2016-10-06 13:44:55 --> Total execution time: 0.0680
+INFO - 2016-10-06 13:49:00 --> Config Class Initialized
+INFO - 2016-10-06 13:49:00 --> Hooks Class Initialized
+DEBUG - 2016-10-06 13:49:00 --> UTF-8 Support Enabled
+INFO - 2016-10-06 13:49:00 --> Utf8 Class Initialized
+INFO - 2016-10-06 13:49:00 --> URI Class Initialized
+INFO - 2016-10-06 13:49:00 --> Router Class Initialized
+INFO - 2016-10-06 13:49:00 --> Output Class Initialized
+INFO - 2016-10-06 13:49:00 --> Security Class Initialized
+DEBUG - 2016-10-06 13:49:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-10-06 13:49:00 --> Input Class Initialized
+INFO - 2016-10-06 13:49:00 --> Language Class Initialized
+INFO - 2016-10-06 13:49:00 --> Language Class Initialized
+INFO - 2016-10-06 13:49:00 --> Config Class Initialized
+INFO - 2016-10-06 13:49:00 --> Loader Class Initialized
+INFO - 2016-10-06 13:49:00 --> Helper loaded: common_helper
+INFO - 2016-10-06 13:49:00 --> Helper loaded: url_helper
+INFO - 2016-10-06 13:49:00 --> Database Driver Class Initialized
+INFO - 2016-10-06 13:49:00 --> Session: Class initialized using 'files' driver.
+INFO - 2016-10-06 13:49:00 --> Parser Class Initialized
+INFO - 2016-10-06 13:49:00 --> Controller Class Initialized
+DEBUG - 2016-10-06 13:49:00 --> Home MX_Controller Initialized
+INFO - 2016-10-06 13:49:00 --> Model Class Initialized
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/models/Home_model.php
+INFO - 2016-10-06 13:49:00 --> Model Class Initialized
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/content/controllers/Content.php
+DEBUG - 2016-10-06 13:49:00 --> Content MX_Controller Initialized
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/admincp_modules/models/Admincp_modules_model.php
+INFO - 2016-10-06 13:49:00 --> Model Class Initialized
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/content/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/home/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/slider/controllers/Slider.php
+DEBUG - 2016-10-06 13:49:00 --> Slider MX_Controller Initialized
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/models/Slider_model.php
+INFO - 2016-10-06 13:49:00 --> Model Class Initialized
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/slider/views/FRONTEND/index.php
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\controllers/../modules/servers/controllers/Servers.php
+DEBUG - 2016-10-06 13:49:00 --> Servers MX_Controller Initialized
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/models/Servers_model.php
+INFO - 2016-10-06 13:49:00 --> Model Class Initialized
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\modules/servers/views/FRONTEND/listServer.php
+ERROR - 2016-10-06 13:49:00 --> Module controller failed to run: banner/index
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/login.php
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/modules/tracking.php
+DEBUG - 2016-10-06 13:49:00 --> File loaded: D:\xampp\htdocs\dolongpk\application\views\FRONTEND/template.php
+INFO - 2016-10-06 13:49:00 --> Final output sent to browser
+DEBUG - 2016-10-06 13:49:00 --> Total execution time: 0.0650
