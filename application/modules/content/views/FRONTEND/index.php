@@ -28,5 +28,4 @@
     </ul>
 </div>
 <?php } }?>
-<?php echo 'asdsdasd';?>
 <!-- aaa -->

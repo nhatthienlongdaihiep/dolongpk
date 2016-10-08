@@ -19,18 +19,6 @@
 <link rel="icon" href="<?=PATH_URL?>static/favicon.ico" type="image/x-icon" />
 <script type="text/javascript" src="<?=PATH_URL?>static/js/jquery-1.11.3.min.js"></script>
 
-<script src="<?=PATH_URL?>static/teaser/js/headjs.js"></script>
-<script src="<?=PATH_URL?>static/teaser/js/jsConfig.js"></script>
-<script src="<?=PATH_URL?>static/teaser/js/wow.min.js"></script>
-<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/style.css">
-<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/jquery.mCustomScrollbar.css">
-<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/animate.css">
-<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/normalize.css">
-<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/style.css">
-<link rel="stylesheet" href="<?=PATH_URL?>static/fancybox/source/jquery.fancybox.css">
-
-<script src="<?=PATH_URL?>static/teaser/js/Popup.js"></script>
-
 <?php $username = $this->session->userdata('username');?>
 <script>
   var root = "<?=PATH_URL?>";
@@ -40,6 +28,18 @@
   var appPath = root + 'teaser/';
   var accountId = '0';
 </script>
+
+<script src="<?=PATH_URL?>static/teaser/js/headjs.js"></script>
+<script src="<?=PATH_URL?>static/teaser/js/jsConfig.js"></script>
+<script src="<?=PATH_URL?>static/js/wow.min.js"></script>
+<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/style.css">
+<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/animate.css">
+<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/normalize.css">
+<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/style.css">
+<link rel="stylesheet" href="<?=PATH_URL?>static/fancybox/source/jquery.fancybox.css">
+
+<script src="<?=PATH_URL?>static/teaser/js/Popup.js"></script>
 </head>
 <body>
 

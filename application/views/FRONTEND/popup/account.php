@@ -34,8 +34,8 @@
 .showpass-inclickdk{position: absolute;width: 41px;height: 41px;left:50%;margin-left: 133px;}
 
 </style>
-<div class="cg_nenden_popup" id='pp_account' onclick="RemovePopLogReg()" style="display: block;">
-    <div id="popLogin" class="cg_tab_danhnhap_dangky">
+<div class="cg_nenden_popup" id='pp_account' onclick="RemovePopLogReg()" style="display:none;">
+    <div id="popLogin" class="cg_tab_danhnhap_dangky" style=''>
         <div class="logoandclose">
             <img style="float:left; top:0; left:0;width:150px;display:none" src="https://header.vtcgame.vn/images/logo184.png">
             <img style="float:right; position:absolute; top:10px; right:0; width:30px; height:30px; cursor:pointer;" onclick="RemovePopLogReg()" src="https://header.vtcgame.vn/images/close-button.png">

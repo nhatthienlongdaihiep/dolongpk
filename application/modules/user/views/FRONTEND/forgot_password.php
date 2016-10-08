@@ -1,23 +1,19 @@
-<div class="main-content--inner"> 
-   <div class="titile">
-      <div class="where"><a href="<?=PATH_URL?>trang-chu" title="Trang chủ" >Trang chủ</a> &gt;<span class="cur"><a href="#" > Quên mật khẩu </a></div>
-      <h3 class="inT"> Quên mật khẩu </h3>
-   </div>
-   <div class="inside">
-      <div class="inbox block_news_is">
-         <div class="newList">
-            <div class="infomation">
-                <form action="" id="fotgotPassword">
-                  <p class="mss_u_fg" style="text-align: center; color: red;"></p>
-                  <p><label for="Mật khẩu cũ">Tài khoản đăng nhập</label><input type="text" name='username'></p>
-                  <p><label for="Mật khẩu cũ">Email đăng nhập:</label><input type="text" name="email"></p>
-                  <p><label for="Mật khẩu cũ">&nbsp;</label><input style="padding: 2px 20px;" type="button" id="forgetPass" value="Gửi"></p>
-                </form>
-            </div>
-         </div>                                        
-      </div>
-   </div>
-        <!--BLOCK DETAIL NEWS--> 
+<div class="noidung-tintuc">
+    <div class="tieu-de">
+        <a href="<?=PATH_URL?>trang-chu" style="color:white; text-decoration:none;">trang chủ</a>
+        <img src="<?=PATH_URL?>static/home/images/icon-tintuc.png" alt=""><span style="color: #e2c371;"> Lấy lại mật khẩu </span>
+    </div>
+    <div class="newList" style='padding:0 0 10px;'>
+        <div class="infomation">
+            <form action="" id="fotgotPassword">
+              <p class="mss_u_fg" style="text-align: center; color: red;"></p>
+              <p><label for="Mật khẩu cũ">Tài khoản đăng nhập</label><input type="text" name='username'></p>
+              <p><label for="Mật khẩu cũ">Email đăng nhập:</label><input type="text" name="email"></p>
+              <p><label for="Mật khẩu cũ">&nbsp;</label><input style="padding: 2px 20px;" type="button" id="forgetPass" value="Gửi"></p>
+            </form>
+        </div>
+    </div>  
+    <div class="clear"></div>
 </div>
 
 

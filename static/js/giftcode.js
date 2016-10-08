@@ -40,7 +40,7 @@ $(document).ready(function(){
 		    });
 		});
         //--- giftcode email
-		$('.send-email').live('click', function(e) {
+		$('.send-email').on('click', function(e) {
 			e.preventDefault();
 			var email = $('#email-code').val();
 	        sendMailGiftCode(email);

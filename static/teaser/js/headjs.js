@@ -1,19 +1,8 @@
-var HEADER_URL= 'http://localhost/dolongky/';
-var PORTAL_URL= 'https://beta.vtcgame.vn/';
+var HEADER_URL= root;
 var ConfigHeader = {
     HEADER_URL: HEADER_URL,
-    PORTAL_URL: PORTAL_URL,
-    HEADER_HANDLE: HEADER_URL + 'Handler/Authen.ashx',
-
-    AUTHEN_OPENID_URL: PORTAL_URL + 'accountapi/api/openid/login?',
-    REGISTER_API_URL: PORTAL_URL + 'accountapi/',
-    UrlMediaVTCEbank: 'http://sandbox1.vtcebank.vn/cmsadmin/resources/upload/',
-    Loading_Page: PORTAL_URL + 'Scripts/loading.js',
-    FacebookAppId: '1723059994609435',
-    urlRootOAuth: PORTAL_URL + 'account/oauthen/'
 };
 
-var validatekey = "bamboo";
 Static_AddReference = function (url, type) {
     var fileref = "";
     if (type == "js") {
@@ -31,8 +20,9 @@ Static_AddReference = function (url, type) {
 };
 
 Static_AddReference(ConfigHeader.HEADER_URL + 'static/teaser/css/headerCSS.css', 'css');
-Static_AddReference(ConfigHeader.HEADER_URL + 'static/teaser/js/commonHead.js', 'js');
 Static_AddReference(ConfigHeader.HEADER_URL + 'static/teaser/js/AccountRegister.js', 'js');
+
+//Static_AddReference(ConfigHeader.HEADER_URL + 'static/teaser/js/commonHead.js', 'js');
 //Static_AddReference(ConfigHeader.HASH_URL, 'js');
 //Static_AddReference(ConfigHeader.HEADER_URL + 'css/bootstrap.min.css', 'css');
 //Static_AddReference(ConfigHeader.HEADER_URL + 'css/component.css', 'css');

@@ -28,6 +28,17 @@
 
 <script type="text/javascript" src="<?=PATH_URL?>static/js/jquery-1.11.3.min.js"></script>
 
+<?php $username = $this->session->userdata('username');?>
+<script>
+var url_home = "<?=PATH_URL?>";
+var url_src = "<?=PATH_URL?>static/web/";
+var root = "<?=PATH_URL?>";
+
+var user_login = "<?php echo $this->session->userdata('username')?>";
+var uri = "<?=$this->uri->segment(1)?>";
+</script>
+
+<script src="<?=PATH_URL?>static/teaser/js/headjs.js"></script>
 <script type="text/javascript" src="<?=PATH_URL?>static/home/js/Rotation-min.js"></script>
 <script type="text/javascript" src="<?=PATH_URL?>static/js/wow.min.js"></script>
 <script type="text/javascript" src="<?=PATH_URL?>static/js/jquery-ui.js"></script>
@@ -42,21 +53,11 @@
 <script type="text/javascript">
     new WOW().init();
 </script>
-
 <script type="text/javascript" src="<?=PATH_URL?>static/home/js/common.js"></script>
-<script type="text/javascript" src="<?=PATH_URL?>static/home/js/utils.js"></script>
+<!-- <script type="text/javascript" src="<?=PATH_URL?>static/home/js/utils.js"></script> --> <!-- Tam thoi tat by Tan -->
 
 </head>
 <body class="index">  
-  <?php $username = $this->session->userdata('username');?>
-  <script>
-  var url_home = "<?=PATH_URL?>";
-  var url_src = "<?=PATH_URL?>static/web/";
-  var root = "<?=PATH_URL?>";
-
-  var user_login = "<?php echo $this->session->userdata('username')?>";
-  var uri = "<?=$this->uri->segment(1)?>";
-  </script>
     <div id="divHeader">
         <!-- <div class="wrap-header" id='wrap-header-extend'>
             <div class="banner-left_" id="banner-left"><a href="https://dolongky.vtcgame.vn/teaser/?utm_source=teaser&amp;utm_medium=banner_vtcgame&amp;utm_content=1&amp;utm_campaign=NoiBo" target="_blank" style="display: block; opacity: 0.0912868;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/27/160x600.png"></a><a href="https://vantrungca.vtcgame.vn/landing06/?utm_source=landing06&amp;utm_medium=banner_vtcgame&amp;utm_content=240616&amp;utm_campaign=NoiBo" target="_blank" style="display: none;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/26/160x600.png"></a><a href="https://phidoi2.vtcgame.vn/landing03/?utm_source=landing03&amp;utm_medium=banner_vtcgame&amp;utm_content=1&amp;utm_campaign=NoiBo" target="_blank" style="display: none;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/16/160x600pd.png"></a><a href="https://sv.vtcgame.vn/update/?utm_source=update&amp;utm_medium=banner_vtcgame&amp;utm_content=120516&amp;utm_campaign=NoiBo" target="_blank" style="display: none;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/14/160x600sv.png"></a><a href="https://as.vtcgame.vn/landing/?utm_source=landing&amp;utm_medium=banner_vtcgame&amp;utm_content=1&amp;utm_campaign=NoiBo" target="_blank" style="display: none;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/09/160x600.png"></a><a href="https://phidoi2.vtcgame.vn/?utm_source=homepage&amp;utm_medium=banner_vtcgame&amp;utm_content=1&amp;utm_campaign=NoiBo" target="_blank" style="display: block; opacity: 0.908713;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/08/01/160x600.png"></a></div>
@@ -128,23 +129,36 @@
             <div id="choi_ngay_box">
                 <div class="choi-ngay wow fadeInUp">
                     <a href="javascript:;" class="bt-choingay"></a>
-                    <span onclick="PopupCtrl.PopupRegisterLogin(1);"></span>
-                    <a href="javascript:;" onclick="RechargeCard.PopupRechargeCard()" class="nap-the"><em></em><p>Nạp thẻ</p></a>
-                    <a href="javascript:;" onclick="PopupCtrl.PopupRegisterLogin(2);" class="dang-ky"><em></em><p>Đăng ký</p></a>
+                    <span onclick="PopupCtrl.PlayNow();"></span>
+                    <a href="javascript:;" onclick="PopupCtrl.Napthe();" class="nap-the"><em></em><p>Nạp thẻ</p></a>
+                    <a href="javascript:;" onclick="PopupCtrl.HomeRegister();" class="dang-ky"><em></em><p>Đăng ký</p></a>
                     <ul class="from-dangnhap">
+                        <?php if(!$username){?>
                         <li><input name="login" id="username" type="text" placeholder="Tài khoản" /></li>
                         <li><input name="login" id="password" type="password" placeholder="Mật khẩu" /></li>
                         <li></li>
                         <li>
                             <div id="lblError" class="err_layout"></div>
                         </li>
-                        <li><a href="" target="_blank">Quên mật khẩu</a></li>
+                        <li><a href="<?=PATH_URL?>quen-mat-khau" target="_blank">Quên mật khẩu</a></li>
                         <li>
                             Đăng nhập bằng :
                             <a href="javascript:;" style="margin-left: 12px;" onclick="LoginAPI.PostRegisterOpenId('facebook');"><img src="<?=PATH_URL?>static/home/images/icon-fa.png" alt=""></a>
                             <a href="javascript:;" onclick="LoginAPI.PostRegisterOpenId('google');"><img src="<?=PATH_URL?>static/home/images/icon-gg.png" alt=""></a>
                         </li>
-                        <a class="bt-dangnhap" href="javascript:;" onclick="btnCheckLogin()"><i>Đăng<br>Nhập</i></a>
+                        <a class="bt-dangnhap" href="javascript:;" onclick="loginUser('#username', '#password', '', '#lblError','');"><i>Đăng<br>Nhập</i></a>
+                        <?php }else{?>
+                        <li> Xin chào : &nbsp;&nbsp; <?=$username?> </li>
+                        <li>
+                            <a href="<?=PATH_URL?>thong-tin-tai-khoan" style="text-decoration:none;"><i>Cập nhật thông tin cá nhân</i></a>
+                        </li>
+                        <li>
+                            <a href="<?=PATH_URL?>doi-mat-khau" style="text-decoration:none;"><i>Đổi mật khẩu</i></a>
+                        </li>
+                        <li>
+                            <a style="text-decoration: none; font-size: 13px;" href="<?=PATH_URL?>thoat">Thoát</a>
+                        </li>
+                        <?php }?>
                     </ul>
                 </div>
             </div>
@@ -284,7 +298,7 @@
 
 <script type="text/javascript" src="<?=PATH_URL?>static/fancybox/source/jquery.fancybox.js"></script>
 <script type="text/javascript" src="<?=PATH_URL?>static/owl-carousel/owl.carousel.js"></script>
-<script type="text/javascript" src="<?=PATH_URL?>static/home/js/ham.js"></script>
+<script type="text/javascript" src="<?=PATH_URL?>static/home/js/jshome.js"></script>
 
 <script type="text/javascript" src="<?php echo PATH_URL?>static/js/account.js"></script>
 <script type="text/javascript" src="<?php echo PATH_URL?>static/js/giftcode.js"></script>
@@ -295,10 +309,9 @@
 <!-- banner -->
 <?php if(1){echo modules::run('banner');} ?>
 
-<!-- Login -->
-<div style="display: none;">
-  <?php echo $this->load->view('FRONTEND/login');?>
-</div>
+<!-- START OF POPUP ACCOUNT -->
+<?php echo $this->load->view('FRONTEND/popup/account');?>
+<!-- END OF POPUP ACCOUNT -->
 
 <?php $this->load->view('FRONTEND/modules/tracking');?>
 </body>

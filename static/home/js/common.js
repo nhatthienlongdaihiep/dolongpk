@@ -262,125 +262,6 @@ window.HomeCtrl = {
         }
     },
 
-    GetListNewHome: function (cateId, currentPage) {
-        $.ajax({
-            type: "GET",
-            url: appPath + "Home/ListNewHome",
-            cache: false,
-            data: {
-                cateId: cateId,
-                currentPage: currentPage == null ? 1 : currentPage,
-                pageSize: 5
-            },
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-            success: function (data) {
-                if (data != null) {
-                    $("#ListNewHome").html(data);
-                }
-            },
-            error: function () {
-                console.log("Hệ thống bận vui lòng quay lại sau");
-            }
-        });
-    },
-
-    GetListNewOther: function (cateId, currentPage, pageSize) {
-        $.ajax({
-            type: "GET",
-            url: appPath + "Home/ListNewItem",
-            cache: false,
-            data: {
-                cateId: cateId,
-                currentPage: currentPage == null ? 1 : currentPage,
-                pageSize: pageSize
-            },
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-            success: function (data) {
-                if (data != null) {
-                    $("#ListNewItem").html(data);
-                }
-            },
-            error: function () {
-                console.log("Hệ thống bận vui lòng quay lại sau");
-            }
-        });
-    },
-
-    GetListNewOther: function (cateId, Id, currentPage) {
-        $.ajax({
-            type: "GET",
-            url: appPath + "Home/ListNewOther",
-            cache: false,
-            data: {
-                cateId: cateId,
-                Id: Id,
-                currentPage: currentPage == null ? 1 : currentPage
-            },
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-            success: function (data) {
-                if (data != null) {
-                    $("#ListNewOther").html(data);
-                }
-            },
-            error: function () {
-                console.log("Hệ thống bận vui lòng quay lại sau");
-            }
-        });
-    },
-
-    GetListNewItem: function (cateId, currentPage, pageSize) {
-        $.ajax({
-            type: "GET",
-            url: appPath + "Home/ListNewItem",
-            cache: false,
-            data: {
-                cateId: cateId,
-                currentPage: currentPage == null ? 1 : currentPage,
-                pageSize: pageSize
-            },
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-            success: function (data) {
-                if (data != null) {
-                    $("#ListNewItem").html(data);
-                }
-            },
-            error: function () {
-                console.log("Hệ thống bận vui lòng quay lại sau");
-            }
-        });
-    },
-
-    PlayNow: function () {
-        if (isAuthen != "True") {
-            PopupCtrl.PopupRegisterLogin(1);
-        } else {
-            window.location = appPath + "Home/ListServer";
-        }
-    },
-
-    LinkServerPlay: function (id) {
-        if (parseInt(id, 10) < 0) return;
-
-        if (isAuthen != "True") {
-            PopupCtrl.PopupRegisterLogin(1); return;
-        } else {
-            window.location = appPath + "Home/Play?serverId=" + id;
-        }
-    },
-
-    JoinGame: function () {
-        var server = $("#txtServer").val();
-        if (server == null || server == '') {
-            PopupCtrl.PopupMessage('Bạn vui lòng chọn server!');
-            return;
-        }
-        HomeCtrl.LinkServerPlay(server);
-    },
-
     GetListServer: function (currentPage, pageSize) {
         $.ajax({
             type: "GET",
@@ -629,6 +510,41 @@ window.AccountCtrl = {
 }
 
 window.PopupCtrl = {
+    Napthe: function () {
+        // console.log('ádsdsd');
+        if( !user_login ) {
+            this.PopupLogin();
+        }
+    },
+
+    PopupLogin: function () {
+        $.fancybox({
+            href : '#popLogin',
+            padding : 0,
+            scrolling: false,
+            beforeShow : function(){
+                $('.fancybox-skin').css({'background':'none','box-shadow':'none'});
+            },
+            afterShow : function(){
+                $('.fancybox-close').css({top: '7px',right: '-2px'});
+            }
+        });
+    },
+
+    HomeRegister: function(){
+        if( !user_login ) {
+            this.PopupLogin();
+        }
+    },
+
+    PlayNow: function(){
+        if( !user_login ){
+            this.PopupLogin();
+        }else{
+            window.open(root + 'vao-game', '_blank');
+        }
+    },
+
     PopupMessage: function (msg) {
         var input = {
             msg: msg
@@ -650,19 +566,6 @@ window.PopupCtrl = {
         });
     },
 
-    PopupLogin: function () {
-        $.ajax({
-            type: "GET",
-            url: appPath + "Popup/PopupLogin",
-            data: {},
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-            success: function (data) {
-                $("#tabs1-DN").html(data);
-            }
-        });
-    },
-
     PopupFastResister: function () {
         $.ajax({
             type: "GET",
@@ -672,39 +575,6 @@ window.PopupCtrl = {
             dataType: "html",
             success: function (data) {
                 $("#tabs1-DN").html(data);
-            }
-        });
-    },
-
-    PopupRegisterLogin: function (type) {
-        var input = {
-            type: type
-        };
-
-        utils.loading();
-        $.ajax({
-            type: "GET",
-            url: appPath + "Popup/PopupRegisterLogin",
-            data: input,
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-            success: function (data) {
-                utils.unLoading();
-                $("#popupwrap").remove(); $("#overlayPopup").remove();
-                $('BODY').append('<div id="popupwrap"></div><div id="overlayPopup" onclick="utils.hidePoup()" style="height:' + utils.documentHeight() + 'px; width:' + utils.documentWidth() + 'px; position: absolute;z-index: 1200;top: 0;left: 0;width: 100%;display: block;opacity: .80;background: #222;filter: alpha(opacity=60);-moz-opacity: 0.8;"></div>');
-                $("#popupContent").html(data); $("#popupwrap").html(data);
-                var width = 450;
-                var height = 500;
-                var topOffset = (((utils.windowHeight() - height) / 2) * 100) / utils.windowHeight();
-                var leftOffset = (((utils.windowWidth() - width) / 2) * 100) / utils.windowWidth();
-                // $('#popupwrap').css('left', leftOffset + "%");
-                // $('#popupwrap').css("top", topOffset + '%');
-                // $('#popupwrap').css('z-index', 1201);
-                // $('#popupwrap').css('position', 'fixed');
-				$('#popupwrap').css('left', '50%');
-                $('#popupwrap').css("top", topOffset + '%');
-                $('#popupwrap').css('z-index', 1201);
-                $('#popupwrap').css('position', 'fixed');
             }
         });
     },
@@ -844,32 +714,6 @@ window.PopupCtrl = {
 }
 
 window.RechargeCard = {
-    PopupRechargeCard: function (type) {
-        //if (isAuthen != "True") {
-        //    PopupCtrl.PopupRegisterLogin(1); return;
-        //}
- 
-        var input = {
-            type: type == null ? "RechargeToVcoin" : type
-        };
-
-        utils.loading();
-        $.ajax({
-            type: "GET",
-            url: appPath + "RechargeCard/Index",
-            data: input,
-            contentType: "application/json; charset=utf-8",
-            dataType: "html",
-            success: function (data) {
-                utils.unLoading();
-                $("#popupwrap").remove(); $("#overlayPopup").remove();
-                $('BODY').append('<div id="popupwrap"></div><div id="overlayPopup" onclick="utils.hidePoup()" style="height:' + utils.documentHeight() + 'px; width:' + utils.documentWidth() + 'px; position: absolute;z-index: 1200;top: 0;left: 0;width: 100%;display: block;opacity: .80;background: #222;filter: alpha(opacity=60);-moz-opacity: 0.8;"></div>');
-                $("#popupwrap").html(data);
-            }
-        });
- 
-    },
-
     PopupRechargeToCard: function (type) {
         var input = {
             type: type

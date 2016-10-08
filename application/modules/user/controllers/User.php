@@ -267,8 +267,6 @@ class User extends MX_Controller{
         $this->template->render();
     }
     function forgetPassword(){
-        //if($this->session->userdata('username')) redirect(PATH_URL);
-        //$this->template->set_template('detail');
         $this->template->write('title', 'Quên mật khẩu| Lấy lại mật khẩu | ' . getSiteName());
         $this->template->write('meta_description', "Bạn quên mật khẩu đăng nhập web game");
         $this->template->write('meta_keywords', 'Lấy lại mật khẩu ');

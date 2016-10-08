@@ -1,25 +1,21 @@
-<div class="main-content--inner"> 
-   <div class="titile">
-      <div class="where"><a href="<?=PATH_URL?>trang-chu" title="Trang chủ" >Trang chủ</a> &gt;<span class="cur"><a href="#" > Đổi mật khẩu </a></div>
-      <h3 class="inT"> Đổi mật khẩu </h3>
-   </div>
-   <div class="inside">
-      <div class="inbox block_news_is">
-         <div class="newList">
-            <div class="infomation">
-              <form action="" id="change-password">
-                <p class="info-change" style="padding-left: 200px; color: red; font-size: 13px;"></p>
-                <p><label for="Mật khẩu cũ">Email đăng ký:</label><input type="text" name="email"></p>
-                <p><label for="Mật khẩu cũ">Mật khẩu cũ:</label><input type="password" name="password_old"></p>
-                <p><label for="Mật khẩu cũ">Mật khẩu mới:</label><input type="password" name="password_new"></p>
-                <p><label for="Mật khẩu cũ">Nhập lại mật khẩu:</label><input type="password" name="re_password"></p>
-                <p><label for="Mật khẩu cũ">&nbsp;</label><input type="submit" id="change-pass" value="Đổi"></p>
-              </form>
-            </div>
-         </div>                                        
-      </div>
-   </div>
-        <!--BLOCK DETAIL NEWS--> 
+<div class="noidung-tintuc">
+    <div class="tieu-de">
+        <a href="<?=PATH_URL?>trang-chu" style="color:white; text-decoration:none;">trang chủ</a>
+        <img src="<?=PATH_URL?>static/home/images/icon-tintuc.png" alt=""><span style="color: #e2c371;"> Đổi mật khẩu </span>
+    </div>
+    <div class="newList" style='padding:0 0 10px;'>
+        <div class="infomation">
+            <form action="" id="change-password">
+              <p class="info-change" style="padding-left: 200px; color: red; font-size: 13px;"></p>
+              <p><label for="Mật khẩu cũ">Email đăng ký:</label><input type="text" name="email"></p>
+              <p><label for="Mật khẩu cũ">Mật khẩu cũ:</label><input type="password" name="password_old"></p>
+              <p><label for="Mật khẩu cũ">Mật khẩu mới:</label><input type="password" name="password_new"></p>
+              <p><label for="Mật khẩu cũ">Nhập lại mật khẩu:</label><input type="password" name="re_password"></p>
+              <p><label for="Mật khẩu cũ">&nbsp;</label><input type="submit" id="change-pass" value="Đổi"></p>
+            </form>
+        </div>
+    </div>  
+    <div class="clear"></div>
 </div>
 
 <style type="text/css">
