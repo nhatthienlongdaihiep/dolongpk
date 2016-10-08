@@ -100,7 +100,7 @@
         <div class="box_donate">
             <div class="wapper">
                 <div class="note">
-                    <h6 style='font-size:16px'>Nạp Thẻ Bằng Thẻ Cào</h6>
+                    <h6>Nạp Thẻ Bằng Thẻ Cào</h6>
                     <!-- <p>Vui lòng chọn đúng máy chủ để nạp tiền. Nếu bạn nạp sai máy chủ hoặc lỗi khi nạp tiền, hãy liên lạc ngay
                         với hỗ trợ hoặc vào link sau để báo lỗi
                     </p>
