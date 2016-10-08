@@ -514,6 +514,8 @@ window.PopupCtrl = {
         // console.log('ádsdsd');
         if( !user_login ) {
             this.PopupLogin();
+        }else{
+            window.open(root+'nap-the','_blank');
         }
     },
 
@@ -534,6 +536,8 @@ window.PopupCtrl = {
     HomeRegister: function(){
         if( !user_login ) {
             this.PopupLogin();
+        }else{
+            alert('Bạn đã đăng nhập rồi !');
         }
     },
 
