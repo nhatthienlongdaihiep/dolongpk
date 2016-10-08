@@ -88,57 +88,7 @@ function showLogin() {
 function showRegister() {
     $(".tab-container").css("display", "block");
 }
-function processHead(tInNa, tInPa, tInCa) {
-    var pattern = /^[,<.>/?;:'"[{]}\|=`~]$/;
-    if (pattern.test("afaiudbf\"jjausduf'fa?adf")) {
-        console.log("ky tu dau vao khong hop le");
-    }
-    else {
-        console.log("hop le");
-    }
 
-    var http = location.protocol;
-    var slashes = http.concat("//");
-    var host = slashes.concat(window.location.hostname);
-    console.log(host);
-    host = CryptoJS.MD5(host);
-    var flag = true;
-
-    var na = $("#" + tInNa).val();
-    var pa = $("#" + tInPa).val();
-    var ca = $("#" + tInCa).val();
-    if (na == "" || pa == "") {
-        alert("hay nhap day du cac truong thong tin");
-        flag = false;
-    }
-
-
-
-    $.ajax({
-        beforeSend: function () {
-            return flag;
-        },
-        type: "POST",
-        url: "http://localhost:1158/home/LoginHead",
-        crossDomain: true,
-        xhrFields: {
-            withCredentials: true
-        },
-        data: {
-            conten: btoa(username),
-            value: btoa(pass),
-            returnURL: "http://localhost:3955/",
-        },
-        success: function (data) {
-            if (data) {
-                console.log(data);
-                if (data = "<span>havebody</span>") {
-                    window.top.location.reload();
-                }
-            }
-        }
-    });
-}
 function LoginHead(idUname, idPass, idCaptcha, idImageCaptcha, idHidverify, idRemember, idOtp, idOtpType, idFrameCaptcha, idThongBao, returnUrl) {
     var flag = true;
     var username = $("#" + idUname).val();
@@ -239,100 +189,6 @@ function LoginHead(idUname, idPass, idCaptcha, idImageCaptcha, idHidverify, idRe
         }
     });
 }
-
-function LoginSiteExtend(idUname, idPass, idRemember, idOtp, idOtpType, idThongBao, returnUrl) {
-    var flag = true;
-    var username = $("#" + idUname).val();
-    var pass = $("#" + idPass).val();
-
-
-    var isRemember = false;
-
-    if ($("#" + idRemember).is(':checked')) {
-        isRemember = true;
-    }
-    var otp = $("#" + idOtp).val();
-    var otpType = $("#" + idOtpType).find('option:selected').val();
-
-    var key = $("#key").val();
-
-    if (username == '' || pass == '') {
-        thongbao(idThongBao, "Nh?p d?y d? các tru?ng thông tin");
-        return;
-    }
-
-    if (!CommonValid.ValidateUserName(username)) {
-        thongbao(idThongBao, "Tên không h?p l?");
-        return;
-    }
-    if (!CommonValid.ValidateLetterPassword(pass)) {
-        thongbao(idThongBao, "M?t kh?u không h?p l?");
-        return;
-    }
-    $.ajax({
-        beforeSend: function () {
-            return flag;
-        },
-        type: "POST",
-        url: ConfigHeader.HEADER_URL + "Handler/Process.ashx?act=Login",
-        crossDomain: true,
-        xhrFields: {
-            withCredentials: true
-        },
-        data: {
-            conten: btoa(username),
-            value: btoa(pass),
-            capt: "",
-            hidverify: "",
-            isRemember: isRemember,
-            key: key,
-            otp: otp,
-            otpType: otpType,
-            returnURL: "http://localhost:3955/",
-        },
-        success: function (data) {
-            if (data) {
-                console.log(data);
-                if (data.ResponseStatus > 0) {
-                    var redirecUrl = returnUrl;
-                    if (redirecUrl == null || redirecUrl == '') {
-                        redirecUrl = getUrlParameterByName('returnUrl');
-                    }
-                    try {
-                        if (typeof HeaderRedirecUrl != undefined && (redirecUrl == null || redirecUrl == '')) {
-                            redirecUrl = HeaderRedirecUrl.RedirecUrl;
-                        }
-                    }
-                    catch (e) {
-                        console.log("reload this page");
-                    }
-                    if (redirecUrl != null && redirecUrl.length > 0) {
-                        window.top.location = redirecUrl;
-                    } else {
-                        window.top.location.reload();
-                    }
-                }
-                else {
-                    //alert(data.errorCode);
-                    if (data.errorCode == -1000) {
-                        // alert(idOtpType);
-                        $("#" + idOtpType).css("display", "block");
-                        $("#" + idOtp).css("display", "block");
-                        $("#cg_div_Login").css("height", "326px");
-
-                    }
-                    else if (data.ResponseStatus == -1005) {
-                        popupHeader("B?n dã dang nh?p sai quá 5 l?n, hãy dang nh?p b?ng popup.");
-                    }
-                    else {
-                        thongbao(idThongBao, data.errorMessage);
-                    }
-                }
-
-            }
-        }
-    });
-}
 function LoginO_Auth(provider, url) {
     var redirecUrl = url;
     if (redirecUrl == null || redirecUrl == '') {
@@ -394,26 +250,7 @@ function Logout() {
         }
     });
 }
-function HeaderLogout() {
-    $.ajax({
-        type: "POST",
-        url: ConfigHeader.HEADER_URL + "Handler/Process.ashx?act=Logout",
-        crossDomain: true,
-        xhrFields: {
-            withCredentials: true
-        },
-        data: {
 
-        },
-        success: function (data) {
-            if (data) {
-                if (data.ResponseStatus > 0) {
-                    window.top.location.reload();
-                }
-            }
-        }
-    });
-}
 function popupHeader(content) {
     alert(content);
     calPopLogin();
@@ -422,113 +259,6 @@ function thongbao(idThongBao, content) {
     $("#" + idThongBao).html(content);
 }
 
-function RegisterHead(idUname, idPass, idPass2, idCaptchaInput, idHidverify, idImgCaptcha, checkbox_dongy, idThongBao, returnUrl) {
-    var flag = true;
-    var username = $("#" + idUname).val();
-    var pass = $("#" + idPass).val();
-    var pass2 = ''//$("#" + idPass2).val();
-    var captcha = $("#" + idCaptchaInput).val();
-    var HidverifyVal = $("#" + idHidverify).val();
-
-    var dongy = false;
-
-    if ($("#" + checkbox_dongy).is(':checked')) {
-        dongy = true;
-    }
-    else {
-        thongbao(idThongBao, "B?n chua d?ng ý v?i th?a thu?n s? d?ng.");
-        flag = false;
-        return;
-    }
-    if (username == '' || pass == '' || captcha == '') {
-        thongbao(idThongBao, "Hãy nh?p d?y d? các tru?ng thông tin");
-        flag = false;
-        return;
-    }
-    if (!CommonValid.ValidateUserName(username)) {
-        thongbao(idThongBao, "Tên không h?p l?");
-        flag = false;
-    }
-    if (!CommonValid.ValidateLetterPassword(pass)) {
-        thongbao(idThongBao, "M?t kh?u không h?p l?");
-        flag = false;
-        return;
-    }
-    //if (pass2 != pass) {
-    //    thongbao(idThongBao, "Nh?p l?i m?t kh?u không kh?p");
-    //    flag = false;
-    //    return;
-    //}
-
-    if (!ValidatePassRegister(idPass, idThongBao)) //m?t kh?u ph?i có d? dài t? 6-18 g?m ch? hoa,thu?ng và s?.
-    {
-        flag = false;
-        return;
-    }
-
-    var key = $("#key").val();
-    var serveridck = "";
-    var linkgenck = "";
-    try {
-        if (typeof HeaderChackingObj != undefined) {
-            serveridck = HeaderChackingObj.ServiceId;
-            linkgenck = HeaderChackingObj.LinkGen;
-        }
-    }
-    catch (e) {
-
-    }
-    $.ajax({
-        beforeSend: function () {
-            return flag;
-        },
-        type: "POST",
-        url: ConfigHeader.HEADER_URL + "/Handler/Process.ashx?act=Register",
-        crossDomain: true,
-        xhrFields: {
-            withCredentials: true
-        },
-        data: {
-            conten: btoa(username),
-            value: btoa(pass),
-            value2: btoa(pass2),
-            capt: captcha,
-            hidverify: HidverifyVal,
-            dongy: dongy,
-            key: key,
-            ServiceId: serveridck,
-            LinkGen: linkgenck,
-        },
-        success: function (data) {
-            if (data) {
-                if (data.ResponseStatus > 0) {
-                    var redirecUrl = returnUrl;
-                    if (redirecUrl == null || redirecUrl == '') {
-                        redirecUrl = getUrlParameterByName('returnUrl');
-                    }
-                    try {
-                        if (typeof HeaderRedirecUrl != undefined && (redirecUrl == null || redirecUrl == '')) {
-                            redirecUrl = HeaderRedirecUrl.RedirecUrl;
-                        }
-                    }
-                    catch (e) {
-                        console.log("reload this page");
-                    }
-                    if (redirecUrl != null && redirecUrl.length > 0) {
-                        window.top.location = redirecUrl;
-                    } else {
-                        window.top.location.reload();
-                    }
-                }
-                else {
-                    $("#" + idHidverify).val(data.Verify);
-                    $("#" + idImgCaptcha).attr("src", "data:image/jpeg;base64," + data.imageData);
-                    thongbao(idThongBao, data.errorMessage);
-                }
-            }
-        }
-    });
-}
 function ValidatePassRegister(idPass, idThongBao) {
     var pass = $('#' + idPass).val();
     if (pass.length < 4 || pass.length > 18) { $('#' + idThongBao).html("M?t kh?u có d? dài 4-18 ký t?."); return false; }
