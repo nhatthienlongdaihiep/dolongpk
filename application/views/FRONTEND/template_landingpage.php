@@ -32,11 +32,10 @@
 <script src="<?=PATH_URL?>static/teaser/js/headjs.js"></script>
 <script src="<?=PATH_URL?>static/teaser/js/jsConfig.js"></script>
 <script src="<?=PATH_URL?>static/js/wow.min.js"></script>
-<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/style.css">
 <link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/jquery.mCustomScrollbar.css">
 <link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/animate.css">
 <link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/normalize.css">
-<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/css/style.css">
+<link rel="stylesheet" href="<?=PATH_URL?>static/teaser/style.css">
 <link rel="stylesheet" href="<?=PATH_URL?>static/fancybox/source/jquery.fancybox.css">
 
 <script src="<?=PATH_URL?>static/teaser/js/Popup.js"></script>
@@ -49,7 +48,7 @@
     <a href="javascript:void(0);" class="arrow2"></a>
     <ul>
         <li data-scroll-nav="0"><a href="#spage1"></a></li>
-        <li data-scroll-nav="1"><a href="#spage2"></a></li>
+        <!-- <li data-scroll-nav="1"><a href="#spage2"></a></li> -->
         <li data-scroll-nav="2"><a href="#spage3"></a></li>
         <li data-scroll-nav="3"><a href="#spage4"></a></li>
         <li data-scroll-nav="4"><a href="#spage5"></a></li>
@@ -68,7 +67,7 @@
         <ul class="wow animated fadeIn" data-wow-delay="2.5s">
             <li><a href="#spage3"><img src="<?=PATH_URL?>static/teaser/images/btn-page1.png" alt=""></a></li>
             <li><a href="#spage4"><img src="<?=PATH_URL?>static/teaser/images/btn-page2.png" alt=""></a></li>
-            <li><a href="#spage2"><img src="<?=PATH_URL?>static/teaser/images/btn-page3.png" alt=""></a></li>
+            <!-- <li><a href="#spage2"><img src="<?=PATH_URL?>static/teaser/images/btn-page3.png" alt=""></a></li> -->
             <li><a href="#spage5"><img src="<?=PATH_URL?>static/teaser/images/btn-page4.png" alt=""></a></li>
             <li><a href="#spage6"><img src="<?=PATH_URL?>static/teaser/images/btn-page5.png" alt=""></a></li>
         </ul>
@@ -83,6 +82,8 @@
     </div>
     <iframe class="test" src="<?=PATH_URL?>static/teaser/iframe1/trang1.html" align="middle" scrolling="no" width="100%" height="900px" style="overflow:hidden" frameborder="0"></iframe>
 </div>
+
+<?php if(0){?>
 <div id="spage2" data-scroll-index="1" class="select select-2">
     <div class="wrapper">
         <div class="content-sl-2">
@@ -180,6 +181,7 @@
         </div> <!-- end content-sl1 -->
     </div>
 </div> <!-- end select-1 -->
+<?php }?>
 
 <div id="spage3" data-scroll-index="2" class="select select-3">
     <div class="wrapper">
@@ -525,9 +527,9 @@
     }
 
     $(document).ready(function () {
-        setTimeout(function () {
-            PopupCtrl.PopupVideo();
-        }, 2000);
+        // setTimeout(function () {
+        //     PopupCtrl.PopupVideo();
+        // }, 2000);
 
     });
 

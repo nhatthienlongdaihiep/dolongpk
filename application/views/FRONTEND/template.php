@@ -23,7 +23,6 @@
 <link rel="stylesheet" type="text/css" href="<?=PATH_URL?>static/home/css/hoathiencot.css"/>
 <link rel="stylesheet" type="text/css" href="<?=PATH_URL?>static/home/css/owl.carousel.css"/>
 <link rel="stylesheet" type="text/css" href="<?=PATH_URL?>static/home/css/style.css"/>
-<link rel="stylesheet" type="text/css" href="<?=PATH_URL?>static/home/css/style2.css"/>
 <link rel="stylesheet" type="text/css" href="<?=PATH_URL?>static/css/jquery-ui.css"/>
 
 <script type="text/javascript" src="<?=PATH_URL?>static/js/jquery-1.11.3.min.js"></script>

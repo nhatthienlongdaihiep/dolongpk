@@ -68,7 +68,7 @@
                     <!-- <p style="margin:10px" class="cg_text_mau_dangky">Bạn chưa có tài khoản <a href="#" onclick="calPopReg(''); return false">Đăng kí tại đây?</a></p> -->
                     <div class="clear"></div>
                 </div>
-                <p class="cg_social_popup_dangky">
+                <p class="cg_social_popup_dangky" style='display:none'>
                     Hoặc đăng nhập qua tài khoản<br />
                     <a class="cg_icon_face_popup_dangnhap" onclick="LoginO_Auth('facebook', '')" href='javascript:;'><img src="<?=PATH_URL?>static/teaser/images/facebook-button.png"></a>
                     <a class="cg_icon_google_popup_dangnhap" onclick="LoginO_Auth('google','')" href='javascript:;'><img src="<?=PATH_URL?>static/teaser/images/google-button.png"></a>
@@ -117,7 +117,7 @@ R6R1V7NbvR6q1ru139MUUUViaBRRRQB//9k=" id="ImgcaptchaDK" style="display: block; w
                     <div class="clear"></div>
                     <a class="cg_btn_popup_dangky" onclick="registerUser('#txtUserNameDK','#txtEmailDK','#txtPassDK','#txCaptchaInput','#checkbox_dongy','#thongbaoDK','')" href="javascript:;">đăng ký</a>
                 </div>
-                <p class="cg_social_popup_dangky">
+                <p class="cg_social_popup_dangky" style='display:none'>
                     Hoặc tạo tài khoản qua<br />
                     <a class="cg_icon_face_popup_dangnhap" onclick="LoginO_Auth('facebook', '')" href='javascript:;'><img src="<?=PATH_URL?>static/teaser/images/facebook-button.png"></a>
                     <a class="cg_icon_google_popup_dangnhap" onclick="LoginO_Auth('google','')" href='javascript:;'><img src="<?=PATH_URL?>static/teaser/images/google-button.png"></a>

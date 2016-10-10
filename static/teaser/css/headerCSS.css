@@ -110,7 +110,7 @@ input[type=checkbox].css-checkbox:checked + label.css-label{background-position:
 .cg_link_dangnhap_dangky li:nth-child(2):hover .cg_cac_link_dangnhap{display:block}
 .cg_tab_danhnhap_dangky{display:inline-block;width:355px;border-radius:3px;border:solid 1px #e5e5e5;background-color:#fff;}
 .cg_tab_danhnhap_dangky:before{content:'';position:absolute;top:0;left:0;width:355px;height:58px;border-bottom:solid 1px #dadada;background-color:#eee}
-.cg_tab_content_login{display:none;padding-top:20px;box-sizing:border-box}
+.cg_tab_content_login{display:none;padding:20px 0;box-sizing:border-box;}
 #cg_tab1_login{display:block}
 .cg_tabs_menu_login{display:inline-block;position:relative;margin:20px 0 0 20px}
 .cg_tab_login{position:relative}
