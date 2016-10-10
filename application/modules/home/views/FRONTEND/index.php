@@ -2,7 +2,7 @@
 <div class="chuoi-sukien wow fadeInUp">
     <a class="text-maychu" href=""><span>Chuỗi Sự kiện</span><br><i style="color: #e2c371;">Máy chủ mới</i></a>
     <a class="text-giftcode" href="javascript:;" onclick="PopupCtrl.PopupGiftCodeHTC('');"><span></span><i style="color: #e2c371;">Nhận Giftcode</i></a>
-    <a class="text-thuvien" href=""><span></span><i style="color: #e2c371;">Thư viện</i></a>
+    <a class="text-thuvien" href=""><span></span><i style="color: #e2c371;">Fanpage</i></a>
 </div>
 <!-- End giftcode section-->
 <!-- tab-tintuc section -->

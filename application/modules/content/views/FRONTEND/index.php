@@ -1,7 +1,7 @@
 <ul class="tabs">
     <li class="tab-link current" data-tab="tab-1"><span>Sự kiện</span></li>
     <li class="tab-link" data-tab="tab-2"><span>Tin tức</span></li> 
-    <li class="tab-link" data-tab="tab-3" style="width: 92px;"><span>Cộng đồng</span></li>
+    <!-- <li class="tab-link" data-tab="tab-3" style="width: 92px;"><span>Cộng đồng</span></li> -->
     <a href="javascript:;" onclick="OpenAllArticleInCate()"></a>
 </ul>
 <?php if($content){ foreach ($content as $key => $value) {?>

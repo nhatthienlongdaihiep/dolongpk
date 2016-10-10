@@ -114,11 +114,11 @@ var uri = "<?=$this->uri->segment(1)?>";
             <!-- menu section -->
             <div class="menu">
                 <ul>
-                    <li><a href=""><span></span><i>trang chủ</i></a></li>
-                    <li><a href=""><span></span><i>cốt truyện</i></a></li>
+                    <li><a href="<?=PATH_URL?>trang-chu"><span></span><i>trang chủ</i></a></li>
+                    <li><a href="<?=PATH_URL?>tin-tuc"><span></span><i>tin tức</i></a></li>
                     <li><a href=""><span></span><i>đặc sắc</i></a></li>
                     <li onclick="backToHome();" style="margin-left: -39px;"></li>
-                    <li><a href=""><span></span><i>thư viện</i></a></li>
+                    <li><a href="<?=PATH_URL?>su-kien"><span></span><i>sự kiện</i></a></li>
                     <li><a href=""><span></span><i>tân thủ</i></a></li>
                     <li><a href="" target="_blank"><span></span><i>fanpage</i></a></li>
                 </ul>
@@ -141,7 +141,7 @@ var uri = "<?=$this->uri->segment(1)?>";
                             <div id="lblError" class="err_layout"></div>
                         </li>
                         <li><a href="<?=PATH_URL?>quen-mat-khau" target="_blank">Quên mật khẩu</a></li>
-                        <li>
+                        <li style='display:none'>
                             Đăng nhập bằng :
                             <a href="javascript:;" style="margin-left: 12px;" onclick="LoginAPI.PostRegisterOpenId('facebook');"><img src="<?=PATH_URL?>static/home/images/icon-fa.png" alt=""></a>
                             <a href="javascript:;" onclick="LoginAPI.PostRegisterOpenId('google');"><img src="<?=PATH_URL?>static/home/images/icon-gg.png" alt=""></a>
@@ -174,7 +174,7 @@ var uri = "<?=$this->uri->segment(1)?>";
 <div id="tai_game_box">
     <div class="tai-game wow fadeInUp">
         <ul>
-            <li class="tai"><a href=""><span></span><p>Tải MiniClient</p></a></li>
+            <li class="tai"><a href=""><span></span><p>Nhập Giftcode</p></a></li>
             <li class="faq"><a href="javascript:;" onclick="PopupCtrl.PopupTopBXH();"><span></span><p>Top Lực Chiến </p></a></li>
             <li class="vip"><a href=""><span></span><p>VIP</p></a></li>
         </ul>
@@ -191,6 +191,7 @@ var uri = "<?=$this->uri->segment(1)?>";
                 <?php echo modules::run('servers/listServer')?>
             </div>
             <!-- DS server section-->
+            <?php if(0){?>
             <!-- video -->
             <div class="video wow fadeInUp">
                 <a class="youtube" href="https://www.youtube.com/watch?v=YSEPQztFCJo">
@@ -200,6 +201,7 @@ var uri = "<?=$this->uri->segment(1)?>";
             </div>
             <!-- hotline -->
             <div class="hotline wow fadeInUp"><a href="" target="_blank"><img src="<?=PATH_URL?>static/home/images/bg-hotline.jpg" alt=""></a></div>
+            <?php }?>
             <!-- facebook -->
             <div class="facebook wow fadeInUp">
                 <div class="fb-page"
