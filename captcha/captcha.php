@@ -9,13 +9,10 @@
  * @version 0.3
  *
  */
-
-if(!session_id())
-    session_start();
+// if(!session_id())
+session_start();
 
 $captcha = new SimpleCaptcha();
-
-
 
 // OPTIONAL Change configuration...
 //$captcha->wordsFile = 'words/es.php';
@@ -154,8 +151,7 @@ class SimpleCaptcha {
         $fontcfg  = $this->fonts[array_rand($this->fonts)];
         $this->WriteText($text, $fontcfg);
 
-
-       $_SESSION['captcha'] = md5(strtolower($text)) ;
+        $_SESSION['captcha'] = md5(strtolower($text)) ;
 
         /** Transformations */
         if (!empty($this->lineWidth)) {
@@ -295,13 +291,6 @@ class SimpleCaptcha {
         }
         return $text;
     }
-
-
-
-
-
-
-
 
     /**
      * Horizontal line insertion

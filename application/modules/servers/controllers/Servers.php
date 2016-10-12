@@ -59,39 +59,8 @@ class Servers extends MX_Controller {
 			exit;
 		}
 		if($_POST){
-			//Upload Image
-			$fileName = array('image'=>'');
-			if($_FILES){
-				foreach($fileName as $k=>$v){
-					if(isset($_FILES['fileAdmincp']['error'][$k])){
-						$typeFileImage = strtolower(substr($_FILES['fileAdmincp']['type'][$k],0,5));
-						if($typeFileImage == 'image'){
-							$tmp_name[$k] = $_FILES['fileAdmincp']["tmp_name"][$k];
-							$file_name[$k] = $_FILES['fileAdmincp']['name'][$k];
-							$ext = strtolower(substr($file_name[$k], -4, 4));
-							if($ext=='jpeg'){
-								$fileName[$k] = time().'_'.SEO(substr($file_name[$k],0,-5)).'.jpg';
-							}else{
-								$fileName[$k] = time().'_'.SEO(substr($file_name[$k],0,-4)).$ext;
-							}
-						}else{
-							print 'Only upload Image.';
-							exit;
-						}
-					}
-				}
-			}
 			//End Upload Image
-			if($this->model->saveManagement($fileName)){
-				//Upload Image
-				if($_FILES){
-					foreach($fileName as $k=>$v){
-						if(isset($_FILES['fileAdmincp']['error'][$k])){
-							$upload_path = BASEFOLDER.DIR_UPLOAD_CLASSES;
-							move_uploaded_file($tmp_name[$k], $upload_path.$fileName[$k]);
-						}
-					}
-				}
+			if( $this->model->saveManagement($fileName) ){
 				//End Upload Image
 				print 'success';
 				exit;
@@ -408,68 +377,6 @@ function playGame($slug = ''){
 		}
 	}
 
-
-	function playGameNew($slug = ''){
-		
-		$username = $this->session->userdata('username');
-		//pr($username,1);
-		if($username){
-			$ip=getIP();
-			if(!is_local()) 	
-
-				$server = $this->model->get('*', PREFIX.$this->table, "`slug` = '$slug' AND status = 1");
-
-			else
-
-				$server = $this->model->get('*', PREFIX.$this->table, "`slug` = '$slug'");
-
-			if($server){
-
-				$user = $this->model->get('*', PREFIX.'web_users', "`username` = '$username' AND status = 1 ");
-
-				$username = str_replace("@", "", $username);
-				$upass = htmlentities(base64_encode(strtolower('duky'.$username)));  
-				if($server->port_game != ''){
-					$url = "http://$server->ip:$server->port_game/$server->sub_folder?account={$username}&security=$upass&s=$server->idplay";
-				}
-					$url = "http://$server->ip/$server->sub_folder?account={$username}&security=$upass&s=$server->idplay";
-
-				$data = array(
-					'url'		=>	$url,
-					'server'	=>	$server,
-					'title'		=>	$server->name . " | " .getSiteName(),
-					//'check'		=>	$check
-				);			
-
-				$data['serverid'] = $server->id;
-                if(!is_local())
-            	{
-            		$data['servers']= $this->model->fetch('*',PREFIX . $this->table,  "`status` = 1 ", "playtime", "DESC");
-            	}
-            	else
-            	{
-            		$data['servers']= $this->model->fetch('*',PREFIX . $this->table,  "", "playtime", "DESC");	
-            	}
-            	// pr($data,1);
-            	$this->load->model("shop_item/shop_item_model");
-            	$data['gamecoin_user'] = $this->shop_item_model->getgamecoin($username, $server->id);
-				$this->load->view('FRONTEND/skin_playgame_new',$data);
-
-			}
-
-			else{
-				redirect(PATH_URL);
-			}
-
-		}
-
-		else{
-
-			$this->session->set_userdata('referer', PATH_URL.$this->uri->uri_string());
-			redirect(PATH_URL.'dang-nhap');
-		}
-
-	}
  	function view_servers(){
  		$this->load->model("servers_model");
  		if(is_local()){

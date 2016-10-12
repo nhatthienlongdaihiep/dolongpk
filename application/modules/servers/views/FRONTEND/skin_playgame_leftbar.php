@@ -10,9 +10,9 @@
     <meta name="description" content="<?php echo META_DESC ?>"/>
     <link rel="shortcut icon" href="<?=PATH_URL?>static/favicon.ico" />
     <link rel="apple-touch-icon" href="<?php echo PATH_URL ?>static/images/front/logo.png"/>
-    <script type="text/javascript" src="<?php echo PATH_URL . 'static/js/' ?>jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo PATH_URL . 'static/js/' ?>jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="<?php echo PATH_URL . 'static/js/' ?>swfobject.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo PATH_URL ?>static/topbar/leftbar.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo PATH_URL ?>static/skin_playgame/css/leftmenu.css">
 
     <script type="text/javascript" src="<?php echo PATH_URL ?>static/fancybox/source/jquery.fancybox.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo PATH_URL ?>static/fancybox/source/jquery.fancybox.css">
@@ -256,6 +256,8 @@
 </div>
 
 <div class="close-lb in"></div>
+
+<?php if(0){?>
 <div class="side-bar" style="margin-left: 0px; padding-right: 0px;">
     <div class="logo">
         <a href="<?php echo PATH_URL; ?>"></a>
@@ -286,6 +288,94 @@
         </ul>
     </div>
 </div>
+
+<?php }?>
+
+<div id="leftControl" class="left_menu"> 
+
+
+    <!-- HTC Add -->
+    <a href="https://hoathiencot.vtcgame.vn/tintuc/[-EVENT-TET-2016-]-Goi-Banh-ngay-Tet" target="_blank" >
+        <img class="logo-left-menu" src="/Content/htc_images/20160202250x190.png" style="width: 215px;">
+    </a> 
+    <!-- End HTC Add --> 
+
+    <!-- HTC Add -->
+    <a href="javascript:;" onclick="PopupCtrl.PopupTopBXH();" class="btn-napthe-left-menu" style="margin-bottom: 15px;" target="_blank">
+        <img src="/Content/htc_images/20160118bg-btn-all.jpg" style="margin-left: 10px;margin-top: 5px;">
+    </a> 
+    <!-- End HTC Add -->
+
+
+
+    <!-- HTC Add -->
+    <div class="form-user">
+        <span><b><i>honamgiang</i></b></span>
+        <a href="javascript:;" class="thoat-user" onclick="AccountCtrl.PostLogout();" >Thoát</a>
+        <br /><br />
+        <span>Đang chơi : Thi&#234;n Cốt 147</span><br />
+        
+    </div>
+    <div class="clear"></div>
+    <!-- End HTC Add -->  
+
+    <!-- HTC Add -->
+    <div class="ds-maychu">  
+        <br />
+        <div class="clear"></div>
+        <select id="selectServerPlay">
+            <option value="-1">-- Máy chủ đã chơi --</option>
+            <option value="147">Thi&#234;n Cốt 147</option>
+            <option value="149">Thi&#234;n Cốt 149</option>
+            }
+        </select> 
+        <div class="clear"></div> 
+        <div><span><br></span></div>
+
+        <select id="selectServer">
+            <option value="-1">-- Máy chủ khác --</option>
+                <option value="4">Thi&#234;n Cốt 4</option>
+                <option value="3">Thi&#234;n Cốt 3</option>
+                <option value="2">Thi&#234;n Cốt 2</option>
+                <option value="1">Thi&#234;n Cốt 1</option>
+        </select>
+    </div>
+    <div class="clear"></div>
+    <!-- End HTC Add -->
+
+
+    <!-- HTC Add -->
+    <div class="form-btn">
+        <a href="javascript:;" onclick="RechargeCard.PopupRechargeCard()" class="btn-napthe-left-menu"><img src="/Content/htc_images/icon1-btn-all.png"><p>nạp thẻ</p></a>
+        <ul>
+            <li class="clear"><a href="https://hoathiencot.vtcgame.vn/vtcgame.exe" target="_blank"><img src="/Content/htc_images/icon2-btn-all.png"><p>tải miniclient</p></a></li>
+            <li class="clear"><a href="https://hoathiencot.vtcgame.vn/tintuc/huong-dan-nap-the" target="_blank"><img src="/Content/htc_images/icon3-btn-all.png"><p>hướng dẫn nạp thẻ</p></a></li>
+            <li class="clear"><a href="https://hoathiencot.vtcgame.vn/danhsach/tan-thu" target="_blank"><img src="/Content/htc_images/icon4-btn-all.png"><p>hướng dẫn tân thủ</p></a></li>
+            <li class="clear"><a href="https://hoathiencot.vtcgame.vn/giftcode" target="_blank"><img src="/Content/htc_images/icon-gif.png"><p>Nhận gift code</p></a></li>
+        </ul>
+    </div>
+    <!-- End HTC Add -->
+
+
+    <!-- HTC Add --> 
+    
+    <a href="http://hotro.vtc.vn/" target="_blank">
+        <img class="hotline-left-menu" src="/Content/htc_images/img-hotline.png"> 
+    </a>
+    <a href="#" style="padding-left: 5px;" >
+        <img src="/Content/htc_images/item-img-1.jpg">
+    </a>
+    <!-- End HTC Add -->
+
+
+
+
+    <!--end:server-->
+    
+    <!--end_bt-->
+</div>
+
+
 
 <div class="server-playgame" style="height: 100%; ">
     <!-- PLAY GAME -->

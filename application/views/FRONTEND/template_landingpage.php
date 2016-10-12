@@ -71,7 +71,7 @@
             <li><a href="#spage5"><img src="<?=PATH_URL?>static/teaser/images/btn-page4.png" alt=""></a></li>
             <li><a href="#spage6"><img src="<?=PATH_URL?>static/teaser/images/btn-page5.png" alt=""></a></li>
         </ul>
-        <div class="btn-play-sl1">
+        <div class="btn-play-sl1" style='display:none'>
             <div class="wow animated fadeIn" data-wow-delay="2.7s">
                 <a href="javascript:;" onclick="PopupCtrl.PopupVideo()">
                     <img src="<?=PATH_URL?>static/teaser/images/btn-play1.png" alt="">

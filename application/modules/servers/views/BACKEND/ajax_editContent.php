@@ -106,15 +106,6 @@ function showResponse(responseText, statusText, xhr, $form) {
 			</tr>
 		</table>
 	</div>
-	
-	<div class="row_text_field">
-		<table cellspacing="0" cellpadding="0" border="0" width="100%">
-			<tr>
-				<td class="left_text_field">Image:</td>
-				<td class="right_text_field"><input type="file" name="fileAdmincp[image]" /><?php if(isset($result->image)){ if($result->image!=''){ ?> - <a class="fancyboxClick" href="<?=PATH_URL.DIR_UPLOAD_SERVER.$result->image?>">Review</a><?php }} ?></td>
-			</tr>
-		</table>
-	</div>
 
 	<div class="row_text_field">
 		<table cellspacing="0" cellpadding="0" border="0" width="100%">

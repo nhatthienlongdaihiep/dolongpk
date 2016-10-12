@@ -71,8 +71,6 @@ class Mobile_card_model extends MY_Model {
 	function card_pay($charge_log_id, $card_type, $card_serial, $card_pin){
 		ignore_user_abort(1);
 
-
-
 		$pay_method = "";
 		$datenow = date("Y-m-d H:i:s",time());
 
@@ -225,21 +223,21 @@ class Mobile_card_model extends MY_Model {
 	//gạch thẻ qua nganluong.vn
 	function charge_nganluong($card_type, $card_serial, $card_pin){
 		$retval = array(
-				'status'        =>	0,
-				'msg'           =>	'',
-				'response_code' =>	-1,
-				'card_amount'   =>	0
-				);
+			'status'        =>	0,
+			'msg'           =>	'',
+			'response_code' =>	-1,
+			'card_amount'   =>	0
+		);
 		//thanh toan NL
 		//random 10% chuyen qua tk vuonglechi
 		//$pay_acc = $this->get_config('pay_acc', 'mobile_card_config');
-		$pay_acc = 'vuonglechi';
+		$pay_acc = 'hainam';
 		if($pay_acc == 'vuonglechi'){
 			include_once(APPPATH.'libraries/MobiCard_tkvuonglechi.php');
 			$retval['taikhoan'] = "nganluong.vuonglechi";
 		}
 		else{
-			include_once(APPPATH.'libraries/MobiCard_tkhainam.php');
+			include_once(APPPATH.'libraries/MobiCard.php');
 			$retval['taikhoan'] = "nganluong.hainam";
 		}
 		$call                    = new MobiCard();
@@ -259,6 +257,7 @@ class Mobile_card_model extends MY_Model {
 		}	 
 
 		$retval['response_code'] = $result->error_code;
+		$retval['transaction_id'] = $transaction_id;
 		
 		if($result->error_code == '00') // thẻ đúng
 		{
@@ -266,8 +265,8 @@ class Mobile_card_model extends MY_Model {
 				'status'        =>	1,
 				'msg'           =>	'Gạch thẻ thành công',
 				'response_code' =>	$result->error_code,
-				'card_amount'   =>	$result->card_amount
-				);
+				'card_amount'   =>	$result->card_amount,
+			);
 
 		}elseif($result->error_code == '18' || $result->error_code == '20' || $result->error_code == '19'){
 			$retval['msg'] = $result->error_message ;

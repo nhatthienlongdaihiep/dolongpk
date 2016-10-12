@@ -318,11 +318,14 @@ class Donate_report extends MX_Controller {
 	function charge(){
 		$output = array(); $output['state'] = 0;
 		$captcha = md5(strtolower($_POST['valcapt']));
-        if($captcha != $_SESSION['captcha']){
-        	$output['msg'] = "Mã xác nhận không chính xác";
-        	echo json_encode($output);
-        	exit();
-        }
+
+		// pr( $_SESSION, 1);
+
+  //       if($captcha != $_SESSION['captcha']){
+  //       	$output['msg'] = "Mã xác nhận không chính xác";
+  //       	echo json_encode($output);
+  //       	exit();
+  //       }
 
 		$this->load->model('donate_config/donate_config_model', 'dmodel');
 		$this->load->model('servers/servers_model');

@@ -1,399 +1,195 @@
 <?php
-
 class Servers_model extends MY_Model {
-
 	private $module = 'servers';
-
 	private $table = 'servers';
-
-
-
 	function getsearchContent($limit,$page){
-
 		$this->db->select('*');
-
 		$this->db->limit($limit,$page);
-
 		$first_access = $this->input->post("first_access");
-
 		if(empty($first_access) || $first_access == 0){
-
 			$this->db->order_by('status DESC, id ASC');
-
 		}
-
 		else{
-
 			$this->db->order_by($this->input->post('func_order_by'),$this->input->post('order_by'));
-
 		}
-
-
-
 		if($this->input->post('content')!='' && $this->input->post('content')!='type here...'){
-
 			$this->db->where('(`name` LIKE "%'.$this->input->post('content').'%")');
-
 		}
-
 		if($this->input->post('dateFrom')!='' && $this->input->post('dateTo')==''){
-
 			$this->db->where('created >= "'.date('Y-m-d 00:00:00',strtotime($this->input->post('dateFrom'))).'"');
-
 		}
-
 		if($this->input->post('dateFrom')=='' && $this->input->post('dateTo')!=''){
-
 			$this->db->where('created <= "'.date('Y-m-d 23:59:59',strtotime($this->input->post('dateTo'))).'"');
-
 		}
-
 		if($this->input->post('dateFrom')!='' && $this->input->post('dateTo')!=''){
-
 			$this->db->where('created >= "'.date('Y-m-d 00:00:00',strtotime($this->input->post('dateFrom'))).'"');
-
 			$this->db->where('created <= "'.date('Y-m-d 23:59:59',strtotime($this->input->post('dateTo'))).'"');
-
 		}
-
 		$query = $this->db->get(PREFIX.$this->table);
-
-
-
 		if($query->result()){
-
 			return $query->result();
-
 		}else{
-
 			return false;
-
 		}
-
 	}
-
-
-
 	function getTotalsearchContent(){
-
 		$this->db->select('*');
-
 		if($this->input->post('content')!='' && $this->input->post('content')!='type here...'){
-
 			$this->db->where('(`name` LIKE "%'.$this->input->post('content').'%")');
-
 		}
-
 		if($this->input->post('dateFrom')!='' && $this->input->post('dateTo')==''){
-
 			$this->db->where('created >= "'.date('Y-m-d 00:00:00',strtotime($this->input->post('dateFrom'))).'"');
-
 		}
-
 		if($this->input->post('dateFrom')=='' && $this->input->post('dateTo')!=''){
-
 			$this->db->where('created <= "'.date('Y-m-d 23:59:59',strtotime($this->input->post('dateTo'))).'"');
-
 		}
-
 		if($this->input->post('dateFrom')!='' && $this->input->post('dateTo')!=''){
-
 			$this->db->where('created >= "'.date('Y-m-d 00:00:00',strtotime($this->input->post('dateFrom'))).'"');
-
 			$this->db->where('created <= "'.date('Y-m-d 23:59:59',strtotime($this->input->post('dateTo'))).'"');
-
 		}
-
 		$query = $this->db->count_all_results(PREFIX.$this->table);
-
-
-
 		if($query > 0){
-
 			return $query;
-
 		}else{
-
 			return false;
-
 		}
-
 	}
-
-
-
 	function getDetailManagement($id){
-
 		$this->db->select('*');
-
 		$this->db->where('id',$id);
-
 		$query = $this->db->get(PREFIX.$this->table);
 
-
-
 		if($query->result()){
-
 			return $query->result();
-
 		}else{
-
 			return false;
-
 		}
-
 	}
 
-
-
-	function saveManagement($fileName=''){
+	function saveManagement(){
 		//pr($_POST,1);
-
 		if($this->input->post('statusAdmincp')=='on'){
-
 			$status = 1;
-
 		}else{
-
 			$status = 0;
-
 		}
-
 		
-
 		if($this->input->post('is_new')=='on'){
-
 			$is_new = 1;
-
 		}else{
-
 			$is_new = 0;
-
 		}
-
 		if($this->input->post('is_cron')=='on'){
-
 			$is_cron = 1;
-
 		}else{
-
 			$is_cron = 0;
-
 		}
-
 		$server_name = $this->input->post('nameAdmincp');
-
 		if($this->input->post('hiddenIdAdmincp')==0){
-
 			//Kiểm tra đã tồn tại chưa?
-
 			$checkData = $this->checkData('name',$this->input->post('nameAdmincp'));
-
 			if($checkData){
-
 				print 'error-title-exists';
-
 				exit;
-
 			}
 
-
-
 			$data = array(
-
 				'name'=> htmlspecialchars($server_name),
-
 				'slug'	=>	SEO($server_name),
-
-				'image'=> $fileName['image'],
-
 				'note'=> htmlspecialchars($this->input->post('noteAdmincp')),
-
 				'sub_folder'=> $this->input->post('subAdmincp'),
-
 				'port_game'=> $this->input->post('port_gameAdmincp'),
-
 				'url_service'=> $this->input->post('url_serviceAdmincp'),
 				'idplay'=> $this->input->post('idplayAdmincp'),
-				
-
 				'port_service'=> $this->input->post('port_serviceAdmincp'),
-
 				'server_status'=> $this->input->post('server_status'),
-
 				'description'=> $this->input->post('descriptionAdmincp'),
-
 				'playtime' => $this->input->post('playtimeAdmincp'),
-
 				'ip'=> htmlspecialchars($this->input->post('ipAdmincp')),
-
 				'status'=> $status,
-
 				'is_new'=> $is_new,
 				'is_cron' => $is_cron,
-
 				'created'=> date('Y-m-d H:i:s',time()),
-
 			);
 
 			if($this->db->insert(PREFIX.$this->table,$data)){
-
 				$newid = $this->db->insert_id();
-
 				modules::run('admincp/saveLog',$this->module,$newid,'Add new','Add new');
-
 				modules::run('donate_config/syncConfig',$newid);
-
 				return true;
-
 			}
-
 		}else{
-
 			$result = $this->getDetailManagement($this->input->post('hiddenIdAdmincp'));
-
 			$slug = '';
-
 			//Kiểm tra đã tồn tại chưa?
-
 			if($result[0]->name!=$this->input->post('nameAdmincp')){
-
 				$checkData = $this->checkData('name', $this->input->post('nameAdmincp'));
-
-
-
 				if($checkData){
-
 					print 'error-title-exists';
-
 					exit;
-
 				}
-
 			}
-
 			//Xử lý xóa hình khi update thay đổi hình
-
 			if($fileName['image']==''){
-
 				$fileName['image'] = $result[0]->image;
-
 			}else{
-
 				@unlink(BASEFOLDER.DIR_UPLOAD_SERVER.$result[0]->image);
-
 			}
-
-			
 
 			$data = array(
-
 				'name'=> htmlspecialchars($this->input->post('nameAdmincp')),
-
 				'slug'	=>	SEO($server_name),
-
-				'image'=> $fileName['image'],
-
 				'note'=> htmlspecialchars($this->input->post('noteAdmincp')),
 				'idplay'=> $this->input->post('idplayAdmincp'),
-
 				'sub_folder'=> $this->input->post('subAdmincp'),
-
 				'port_game'=> $this->input->post('port_gameAdmincp'),
-
 				'url_service'=> $this->input->post('url_serviceAdmincp'),
-
 				'port_service'=> $this->input->post('port_serviceAdmincp'),
-
 				'server_status'=> $this->input->post('server_status'),
-
 				'description'=> $this->input->post('descriptionAdmincp'),
-
 				'playtime' => $this->input->post('playtimeAdmincp'),
-
 				'ip'=> htmlspecialchars($this->input->post('ipAdmincp')),
-
 				'status'=> $status,
-
 				'is_new'=> $is_new,
 				'is_cron' =>$is_cron,
-
 				'modified'=> date('Y-m-d H:i:s',time()),
-
 			);
-
 			modules::run('admincp/saveLog',$this->module,$this->input->post('hiddenIdAdmincp'),'','Update',$result,$data);
-
 			$this->db->where('id',$this->input->post('hiddenIdAdmincp'));
-
 			if($this->db->update(PREFIX.$this->table,$data)){
-
 				return true;
-
 			}
-
 		}
-
 		return false;
-
 	}
 
 
 
 	function checkData($field, $title){
-
 		$this->db->select('id');
-
 		$this->db->where($field,$title);
-
 		$this->db->limit(1);
-
 		$query = $this->db->get(PREFIX.$this->table);
-
-
-
 		if($query->result()){
-
 			return true;
-
 		}else{
-
 			return false;
-
 		}
-
 	}
-
-
 
 	function checkSlug($slug){
-
 		$this->db->select('id');
-
 		$this->db->where('slug',$slug);
-
 		$this->db->limit(1);
-
 		$query = $this->db->get(PREFIX.$this->table);
-
-
-
 		if($query->result()){
-
 			return true;
-
 		}else{
-
 			return false;
-
 		}
-
 	}
 
-
-
 	/*----------------------FRONTEND----------------------*/
-
 	function getServers(){
 		$this->db->order_by('playtime DESC');
 		// $this->db->limit(12);
@@ -429,47 +225,27 @@ class Servers_model extends MY_Model {
 	}
 
 	function listServer(){
-
 		$this->db->order_by('status DESC, created DESC');
-
 		if(!is_local())
-
 			$this->db->where('status > 0');
-
 		$query = $this->db->get(PREFIX.$this->table);
-
 		if($query->num_rows()>0){
-
 			return $query->result();
-
 		}else{
-
 			return 0;
-
 		}
-
 	}
 
     function getActiveServers(){
-
         $this->db->select('*');
-
         $this->db->order_by('status DESC, created DESC');
-
         if(!is_local())
-
         	$this->db->where('server_status = 1');
-
         $query = $this->db->get(PREFIX.$this->table);
-
         if($query->result()){
-
             return $query->result();
-
         }else{
-
             return false;
-
         }
 
     }
