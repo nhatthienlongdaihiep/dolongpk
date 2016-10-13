@@ -129,12 +129,6 @@ class Servers_model extends MY_Model {
 					exit;
 				}
 			}
-			//Xử lý xóa hình khi update thay đổi hình
-			if($fileName['image']==''){
-				$fileName['image'] = $result[0]->image;
-			}else{
-				@unlink(BASEFOLDER.DIR_UPLOAD_SERVER.$result[0]->image);
-			}
 
 			$data = array(
 				'name'=> htmlspecialchars($this->input->post('nameAdmincp')),

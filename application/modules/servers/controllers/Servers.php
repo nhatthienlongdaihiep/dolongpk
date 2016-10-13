@@ -60,7 +60,7 @@ class Servers extends MX_Controller {
 		}
 		if($_POST){
 			//End Upload Image
-			if( $this->model->saveManagement($fileName) ){
+			if( $this->model->saveManagement() ){
 				//End Upload Image
 				print 'success';
 				exit;
@@ -244,76 +244,8 @@ class Servers extends MX_Controller {
 		
 
 	}			
-		
 
-
-	function playclient($slug = ''){
-		// if(!is_local()){
-		// 	redirect(PATH_URL);
-		// }
-
-		$username = $this->session->userdata('username');
-		//pr($username,1);
-		if($username){
-			$ip=getIP();
-			if(!is_local())
-
-				$server = $this->model->get('*', PREFIX.$this->table, "`slug` = '$slug' AND status = 1");
-
-			else
-
-				$server = $this->model->get('*', PREFIX.$this->table, "`slug` = '$slug'");
-
-			if($server){
-
-				$user = $this->model->get('*', PREFIX.'web_users', "`username` = '$username' AND status = 1 ");
-				if(!isset($user->id)){
-					redirect(PATH_URL);
-				}
-
- 				$compare1 = base64_encode(strtolower('lienminhhuyenhac'.$username));
-
-				$security =  htmlentities(md5($compare1."vandao15"));
-				//pr($security);
-				$url = "http://$server->ip/$server->sub_folder?account={$username}&security=$security";
-				//pr($url,1);
-				$data = array(
-					'url'		=>	$url,
-					'server'	=>	$server,
-					'title'		=>	$server->name . " | " .getSiteName(),
-					//'check'		=>	$check
-				);
-
-				$data['serverid'] = $server->id;
-				$this->session->set_userdata('server_id',$server->id);
-                if(!is_local())
-            	{
-            		$data['servers']= $this->model->fetch('*',PREFIX . $this->table,  "`status` = 1 ", "playtime", "DESC");
-            	}
-            	else
-            	{
-            		$data['servers']= $this->model->fetch('*',PREFIX . $this->table,  "", "playtime", "DESC");
-            	}
-            	//pr($data,1);
-				$this->load->view('FRONTEND/skin_playgame_client',$data);
-
-			}
-
-			else{
-				redirect(PATH_URL);
-			}
-
-		}
-
-		else{
-
-			$this->session->set_userdata('referer', PATH_URL.$this->uri->uri_string());
-			redirect(PATH_URL.'dang-nhap');
-		}
-
-	}
-
-function playGame($slug = ''){
+	function playGame($slug = ''){
 		$ipcheck = getIP();
 		/*if(ban_ip($ipcheck)){
 			redirect(PATH_URL);
@@ -331,26 +263,22 @@ function playGame($slug = ''){
 				if(!isset($user->id)){
 					redirect(PATH_URL);
 				}
-				$md5user_str =md5($username.'@^*%HoanhDo%*^@');
-	            $character = $username.'_'.$md5user_str;
+
+				$sid = $server->idplay;
 
 				$time = time();
 				$key_login = "dGVhbWRldjIwMTU";
 				$sid = $server->idplay;
- 				$compare1 = md5($time.$sid.$user->username.$key_login);
-				$security =  md5($compare1."vandao15");
+ 				$security = md5($time.$sid.$user->username.$key_login);
 				//pr($security);
-				$url = "http://$server->ip/$server->sub_folder?account={$username}&security=$security&time={$time}&sid={$server->idplay}";
-	            // $username2 = md5($username."tien<->datnn^**^@@^");
-	            // $character = $username."_".$username2;
-				//$new_account = file_get_contents("http://$server->url_service/new_account.php?account=$character&sid=$server->idplay");
-				
-				$data = array(
-					'url'		=>	$url,
-					'server'	=>	$server,
-					'title'		=>	$server->name . " | " .getSiteName(),
-					//'check'		=>	$check
-				);
+   				$url = "http://$server->ip:$server->port_game/$server->sub_folder?account={$username}&security=$security&time={$time}&sid={$server->idplay}";
+
+   				$data = array(
+                    'url'       =>  $url,
+                    'server'    =>  $server,
+                    'title'     =>  $server->name . " | " .getSiteName(),
+                );
+
 				$data['serverid'] = $server->id;
 				$server_id = $this->session->userdata("server_id");
 				if($server_id != $server->id)
@@ -363,7 +291,7 @@ function playGame($slug = ''){
             	}
             	//pr($data,1);
 
-            	$pre_bool = file_get_contents('http://'.$server->url_service.'/api_new_account.php?account='.$character.'&sid='.$sid);
+            	//$pre_bool = file_get_contents('http://'.$server->url_service.'/api_new_account.php?account='.$character.'&sid='.$sid);
             	// pr($username);
             	// pr('http://'.$server->url_service.'/api_new_account.php?account='.$character.'&sid='.$sid,1);
                 $this->load->view('FRONTEND/skin_playgame_leftbar',$data);    

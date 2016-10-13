@@ -74,19 +74,24 @@ td, th {
     padding: 0;
 }
 
-.left-menu {
-    background: url("../htc_images/bg-left-menu.jpg") no-repeat top #354061;
-    display: inline-block;
+.left_menu {
+    background: url(../images/bg-left-menu.jpg) no-repeat top #354061;
     width: 227px;
-    position: relative;
+    z-index:3;
+    position: absolute;
+    float: left;
+    z-index: 9;
+    top: 0px;
+    left: 0px;
+    transition: all 0.5s;
+    height: 100%;
 }
 
-#leftControl {
-    background: url("../htc_images/bg-left-menu.jpg") no-repeat top #354061;
-    display: inline-block;
-    width: 227px;
-    position: relative;
-}
+.server-playgame{background:#2E2E2E;}
+.server-playgame{right:0px;position:absolute;top:0px;z-index:1;transition: all 0.5s;}
+
+a.btn_expand{display:block;position:absolute;background:#000;width:20px;height:40px;top:36%;right:-20px;}
+a.btn_expand span{background:url(../images/btn_arrow.png) no-repeat;display:block;width:18px;height:24px;vertical-align:middle;margin-top:8px;}
 
 .logo-left-menu {
     margin: 0 auto;
@@ -111,7 +116,7 @@ td, th {
 
     .form-user span {
         color: #bd9542;
-        font-family: 'Tahoma';
+        font-family: 'arial';
         font-size: 13px;
         display: inline-block;
         float: left;
@@ -123,7 +128,7 @@ td, th {
     text-decoration: underline;
     color: #616577;
     font-size: 13px;
-    font-family: 'Tahoma';
+    font-family: 'arial';
     float: right;
     margin-right: 7px;
 }
@@ -136,7 +141,7 @@ td, th {
         display: inline-block;
         color: #e6d4d4;
         font-size: 13px;
-        font-family: 'Segoeui';
+        font-family: 'arial';
     }
 
     .ds-maychu span {
@@ -150,8 +155,8 @@ td, th {
     .ds-maychu select {
         color: #2d2d2d;
         font-size: 13px;
-        font-family: 'Segoeui';
-        background: url(../htc_images/bg-select.png) no-repeat right #fff;
+        font-family: 'arial';
+        background: url(../images/bg-select.png) no-repeat right #fff;
         -webkit-appearance: none;
         -moz-appearance: none;
         -o-appearance: none;
@@ -162,7 +167,7 @@ td, th {
     }
 
 .form-btn {
-    background: url("../htc_images/bg-btn-all.jpg") no-repeat;
+    background: url(../images/bg-btn-all.jpg) no-repeat;
     margin: 28px 0 0 8px;
 }
 
@@ -181,7 +186,7 @@ td, th {
     }
 
     .btn-napthe-left-menu p {
-        font-family: 'UTM aptima-bold';
+        font-family: 'arial';
         color: #603800;
         font-size: 21px;
         line-height: 21px;
@@ -227,7 +232,7 @@ td, th {
     color: #eec97f;
     font-size: 13px;
     text-transform: uppercase;
-    font-family: 'UTM aptima';
+    font-family: 'arial';
     float: left;
     margin: 11px 0 0 0;
 }
@@ -272,7 +277,7 @@ td, th {
     overflow: hidden;
     margin: 0 auto;
     position: relative;
-    background: url("../htc_images/bg-dsmc.png") no-repeat #fff;
+    background: url(../images/bg-dsmc.png) no-repeat #fff;
 }
 
 .btn-close-dsmc {
@@ -286,7 +291,7 @@ td, th {
     font-size: 26px;
     line-height: 26px;
     text-transform: uppercase;
-    font-family: 'UTM aptima-bold';
+    font-family: 'arial';
     display: inline-block;
     margin: 19px 0 0 221px;
 }
@@ -302,7 +307,7 @@ td, th {
     .form-user-dsmc span {
         color: #c76f34;
         font-size: 14px;
-        font-family: 'Tahoma';
+        font-family: 'arial';
         font-weight: 700;
         display: inline-block;
         margin-left: 99px;
@@ -312,7 +317,7 @@ td, th {
     color: #9d887b;
     text-decoration: underline;
     font-size: 12px;
-    font-family: 'Tahoma';
+    font-family: 'arial';
     font-weight: 400;
     display: inline-block;
     float: right;
@@ -323,7 +328,7 @@ td, th {
     text-decoration: underline;
     color: #607089;
     font-size: 12px;
-    font-family: 'Tahoma';
+    font-family: 'arial';
     font-weight: 400;
     display: inline-block;
     margin: 5px 0 14px 100px;
@@ -332,7 +337,7 @@ td, th {
 .form-user-dsmc p {
     color: #333e5e;
     font-size: 12px;
-    font-family: 'Tahoma';
+    font-family: 'arial';
     font-weight: 400;
     float: left;
     display: inline-block;
@@ -341,7 +346,7 @@ td, th {
 
 .form-user-dsmc select {
     border: 1px solid #818798;
-    background: url(../htc_images/bg-select-dsmc.png) no-repeat 96% #fff;
+    background: url(../images/bg-select-dsmc.png) no-repeat 96% #fff;
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
@@ -359,7 +364,7 @@ td, th {
     color: #fff;
     background: #c09239;
     font-size: 15px;
-    font-family: 'Tahoma';
+    font-family: 'arial';
     font-weight: 400;
     padding: 6px 0;
 }
@@ -368,7 +373,7 @@ td, th {
     position: relative;
     color: #243e6f;
     font-size: 20px;
-    font-family: 'UTM aptima-bold';
+    font-family: 'arial';
     text-transform: uppercase;
     width: 300px;
     display: table;
@@ -380,7 +385,7 @@ td, th {
 
     .title-big-dsmc:before, .title-big-dsmc:after {
         content: "";
-        background: url("../htc_images/icon-muiten-dsmc.png") no-repeat;
+        background: url(../images/icon-muiten-dsmc.png) no-repeat;
         width: 69px;
         height: 13px;
         display: inline-block;
@@ -411,7 +416,7 @@ td, th {
     }
 
         .nav-big-dsmc-1 li i {
-            background: url(../htc_images/icon-maychu.png) no-repeat;
+            background: url(../images/icon-maychu.png) no-repeat;
             width: 21px;
             height: 21px;
             display: inline-block;
@@ -421,7 +426,7 @@ td, th {
         }
 
 .nav-big-dsmc-2 li i {
-    background: url(../htc_images/icon-maychu.png) no-repeat;
+    background: url(../images/icon-maychu.png) no-repeat;
     width: 21px;
     height: 21px;
     display: inline-block;
@@ -434,13 +439,13 @@ td, th {
     width: 289px;
     display: inline-block;
     position: relative;
-    background: url("../htc_images/bg-maychu.png") no-repeat;
+    background: url(../images/bg-maychu.png) no-repeat;
     height: 50px;
     padding: 17px 0 0 0;
     color: #fefefe;
     font-size: 24px;
     text-align: center;
-    font-family: 'Tahoma';
+    font-family: 'arial';
 }
 
     .nav-big-dsmc-1 li a img {
@@ -467,14 +472,14 @@ td, th {
         .nav-big-dsmc-2 li a {
             color: #adc3ec;
             font-size: 18.5px;
-            font-family: 'Tahoma';
+            font-family: 'arial';
             width: 221px;
             text-align: center;
             height: 38px;
             padding-top: 14px;
             display: inline-block;
             position: relative;
-            background: url("../htc_images/bg-maychu.png") no-repeat 0 bottom;
+            background: url(../images/bg-maychu.png) no-repeat 0 bottom;
         }
 
             .nav-big-dsmc-2 li a img {
@@ -499,7 +504,7 @@ td, th {
     background: #5d6889;
     color: #bbc3de;
     font-size: 15px;
-    font-family: 'UTM aptima';
+    font-family: 'arial';
     margin: 0 auto;
     margin-bottom: 15px;
 }
@@ -535,34 +540,4 @@ td, th {
                 color: #fff;
             }*/
 
-
-
 /* End Phân trang*/
-
-
-
-
-@font-face {
-    src: url(../htc_fonts/Tahoma.ttf);
-    font-family: 'Tahoma';
-}
-
-@font-face {
-    src: url(../htc_fonts/SegoeUI-Bold.ttf);
-    font-family: 'SegoeUI-bold';
-}
-
-@font-face {
-    src: url(../htc_fonts/segoeui.ttf);
-    font-family: 'Segoeui';
-}
-
-@font-face {
-    src: url("../htc_fonts/UTM APTIMABOLD.TTF");
-    font-family: 'UTM aptima-bold';
-}
-
-@font-face {
-    src: url("../htc_fonts/UTM APTIMA.TTF");
-    font-family: 'UTM aptima';
-}

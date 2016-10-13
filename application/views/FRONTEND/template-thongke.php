@@ -45,21 +45,11 @@
     </ul>
 </div>
 <div class="right-content-wrap">
-   <?php
-    if($content) echo $content;
-    else
-    {?>
-        <?php $this->load->view('FRONTEND/thongke');?>
-    <?php
-    }
-    ?>
+   <?= $content ?>
 </div>
 <div class="clear"></div>
 </div>
 </div>
-
-
-
 
 <div id="my_server" class="well" style="display:none; margin:1em; position: relative !important; z-index: 9999 !important; color: #000; background: #fff">
     <a href="#" class="my_modal_close" style="float:right;padding:0 0.4em; position: relative; z-index: 9999;">×</a>

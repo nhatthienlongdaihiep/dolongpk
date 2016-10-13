@@ -118,7 +118,7 @@ function registerUser(idUname, idEmail, idPass, idCaptchaInput, checkbox_dongy, 
         },
         success:function(result){
             if(result.status){
-                // check_register_convertion();
+                check_register_convertion();
                 // setConfirmUnload(false);
                 thongbao(idThongBao, "<span style='color: blue;'>"+result.msg+"</span>");
                 setTimeout(function(){location.href = root }, 2000);

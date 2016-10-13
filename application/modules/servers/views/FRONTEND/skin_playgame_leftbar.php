@@ -43,14 +43,6 @@
     <script type="text/javascript">
         $(document).ready(function(){
 
-            $(".newbie").on('click', function() {
-                $.fancybox({
-                    href: root+'newbie/loadViewNewBie?servers='+servers_id_active,
-                    type: "iframe",
-                    width: "700px",
-                    height: "500px"
-                });
-            });
 
             insert_sv_cur(servers_id_active);
             setInterval(function(){
@@ -64,42 +56,30 @@
                 var value = $("#play-server option:selected").val();
                 window.location.assign("<?php echo PATH_URL ?>choi-game/" + value);
             });
-            $('.button_show_hide').click(function(){
-                var hei = $(window).height();
-                var wid = $(window).width();
-                $('.topbar').toggle();
-                $(this).toggleClass('active');
-                if( $('.topbar').is(":hidden") ){
-                    $('.server-playgame').height(hei);
-                    $('.server-playgame').css({'top' : '0px'})
-                } else{
-                    $('.server-playgame').height(hei - 36);
-                    $('.server-playgame').css({'top' : '36px'})
-                }
-            })
+
             $(".icon-3").click(function(e){
                 $(".ajax_hit_news").html("");
                 onoffmess();
 
             })
             $(".ajax_hit_news").hide();
-            get_notice();
-             setInterval(function(){
-                get_notice();
-            },144000);
+            // get_notice();
+            //  setInterval(function(){
+            //     get_notice();
+            // },144000);
 
-            setTimeout(function(){
-                get_notice();
-            },10000)
+            // setTimeout(function(){
+            //     get_notice();
+            // },10000)
 
-            setTimeout(function(){
-                ajax_hit_news();
-            },20000)
-
-
+            // setTimeout(function(){
+            //     ajax_hit_news();
+            // },20000)
 
 
-            ajax_hit_news();
+
+
+            //ajax_hit_news();
 
         });
 
@@ -292,17 +272,18 @@
 <?php }?>
 
 <div id="leftControl" class="left_menu"> 
+    <a href="javascript:;" class='btn_expand' title='Click to Expand'> <span> </a>
 
 
     <!-- HTC Add -->
-    <a href="https://hoathiencot.vtcgame.vn/tintuc/[-EVENT-TET-2016-]-Goi-Banh-ngay-Tet" target="_blank" >
-        <img class="logo-left-menu" src="/Content/htc_images/20160202250x190.png" style="width: 215px;">
+    <a href="" target="_blank" >
+        <img class="logo-left-menu" src="../static/skin_playgame/images/20160202250x190.png" style="width: 215px;">
     </a> 
     <!-- End HTC Add --> 
 
     <!-- HTC Add -->
     <a href="javascript:;" onclick="PopupCtrl.PopupTopBXH();" class="btn-napthe-left-menu" style="margin-bottom: 15px;" target="_blank">
-        <img src="/Content/htc_images/20160118bg-btn-all.jpg" style="margin-left: 10px;margin-top: 5px;">
+        <img src="../static/skin_playgame/images/20160118bg-btn-all.jpg" style="margin-left: 10px;margin-top: 5px;">
     </a> 
     <!-- End HTC Add -->
 
@@ -310,8 +291,8 @@
 
     <!-- HTC Add -->
     <div class="form-user">
-        <span><b><i>honamgiang</i></b></span>
-        <a href="javascript:;" class="thoat-user" onclick="AccountCtrl.PostLogout();" >Thoát</a>
+        <span><b><i><?=$this->session->userdata('username');?></i></b></span>
+        <a href="<?=PATH_URL?>thoat" class="thoat-user" >Thoát</a>
         <br /><br />
         <span>Đang chơi : Thi&#234;n Cốt 147</span><br />
         
@@ -322,22 +303,13 @@
     <!-- HTC Add -->
     <div class="ds-maychu">  
         <br />
-        <div class="clear"></div>
-        <select id="selectServerPlay">
-            <option value="-1">-- Máy chủ đã chơi --</option>
-            <option value="147">Thi&#234;n Cốt 147</option>
-            <option value="149">Thi&#234;n Cốt 149</option>
-            }
-        </select> 
         <div class="clear"></div> 
-        <div><span><br></span></div>
 
-        <select id="selectServer">
-            <option value="-1">-- Máy chủ khác --</option>
-                <option value="4">Thi&#234;n Cốt 4</option>
-                <option value="3">Thi&#234;n Cốt 3</option>
-                <option value="2">Thi&#234;n Cốt 2</option>
-                <option value="1">Thi&#234;n Cốt 1</option>
+        <select id="selectServer" name="select_server" onchange="location = this.options[this.selectedIndex].value;">
+            <option value="0">-- Máy chủ khác --</option>
+            <?php foreach ($servers as $key => $value) { ?>
+            <option <?php echo ($server->id == $value->id) ? 'selected="true"':'' ?> value="<?php echo PATH_URL ?>choi-game/<?php echo $value->slug ?>"><?php echo $value->name; ?></option>
+            <?php }?>
         </select>
     </div>
     <div class="clear"></div>
@@ -346,12 +318,12 @@
 
     <!-- HTC Add -->
     <div class="form-btn">
-        <a href="javascript:;" onclick="RechargeCard.PopupRechargeCard()" class="btn-napthe-left-menu"><img src="/Content/htc_images/icon1-btn-all.png"><p>nạp thẻ</p></a>
+        <a href="javascript:;" onclick="RechargeCard.PopupRechargeCard()" class="btn-napthe-left-menu"><img src="../static/skin_playgame/images/icon1-btn-all.png"><p>nạp thẻ</p></a>
         <ul>
-            <li class="clear"><a href="https://hoathiencot.vtcgame.vn/vtcgame.exe" target="_blank"><img src="/Content/htc_images/icon2-btn-all.png"><p>tải miniclient</p></a></li>
-            <li class="clear"><a href="https://hoathiencot.vtcgame.vn/tintuc/huong-dan-nap-the" target="_blank"><img src="/Content/htc_images/icon3-btn-all.png"><p>hướng dẫn nạp thẻ</p></a></li>
-            <li class="clear"><a href="https://hoathiencot.vtcgame.vn/danhsach/tan-thu" target="_blank"><img src="/Content/htc_images/icon4-btn-all.png"><p>hướng dẫn tân thủ</p></a></li>
-            <li class="clear"><a href="https://hoathiencot.vtcgame.vn/giftcode" target="_blank"><img src="/Content/htc_images/icon-gif.png"><p>Nhận gift code</p></a></li>
+            <li class="clear"><a href="" target="_blank"><img src="../static/skin_playgame/images/icon2-btn-all.png"><p>tải miniclient</p></a></li>
+            <li class="clear"><a href="" target="_blank"><img src="../static/skin_playgame/images/icon3-btn-all.png"><p>hướng dẫn nạp thẻ</p></a></li>
+            <li class="clear"><a href="" target="_blank"><img src="../static/skin_playgame/images/icon4-btn-all.png"><p>hướng dẫn tân thủ</p></a></li>
+            <li class="clear"><a href="" target="_blank"><img src="../static/skin_playgame/images/icon-gif.png"><p>Nhận gift code</p></a></li>
         </ul>
     </div>
     <!-- End HTC Add -->
@@ -359,16 +331,13 @@
 
     <!-- HTC Add --> 
     
-    <a href="http://hotro.vtc.vn/" target="_blank">
-        <img class="hotline-left-menu" src="/Content/htc_images/img-hotline.png"> 
+    <a href="" target="_blank">
+        <img class="hotline-left-menu" src="../static/skin_playgame/images/img-hotline.png"> 
     </a>
     <a href="#" style="padding-left: 5px;" >
-        <img src="/Content/htc_images/item-img-1.jpg">
+        <img src="../static/skin_playgame/images/item-img-1.jpg">
     </a>
     <!-- End HTC Add -->
-
-
-
 
     <!--end:server-->
     
@@ -377,7 +346,7 @@
 
 
 
-<div class="server-playgame" style="height: 100%; ">
+<div class="server-playgame" style="height:100%;float:left;">
     <!-- PLAY GAME -->
     <?php
         if (!is_local()) {
@@ -407,23 +376,5 @@
     <?php $this->load->view('FRONTEND/modules/tracking.php'); ?>
 </div>
 
- <!-- Google Code for &#272;&#259;ng K&yacute; Li&ecirc;n Minh &Aacute;m H&#7855;c Conversion Page -->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 967352150;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "nYtNCJjPn1sQ1r6izQM";
-var google_remarketing_only = false;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/967352150/?label=nYtNCJjPn1sQ1r6izQM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
 </body>
 </html>
