@@ -75,5 +75,43 @@ class Home extends MX_Controller
     }
     /*End of iplocal host*/
 
+    function file_get_contents_curl($url) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Set curl to return the data instead of printing it to the browser.
+        curl_setopt($ch, CURLOPT_URL, $url);
+        $data = curl_exec($ch);
+        curl_close($ch);
+        return $data;
+    }
+
+    function get_data($url) {
+        $ch = curl_init();
+        $timeout = 5;
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $data = curl_exec($ch);
+        curl_close($ch);
+        return $data;
+    }
+
+    function test(){
+        // $url = "http://tienkiemkyduyen.mobi/2namxungba/test.php";
+        $url = "http://tienkiemkyduyen.mobi/2namxungba/tester/test";
+        echo $this->get_data($url);
+    }
+    function test2(){
+        $data['url'] = "http://103.27.60.212:8888/api_tan.php";
+        $html = $this->load->view('api_view',$data,TRUE);
+
+        // $string = preg_replace('/<iframe.*?\/iframe>/i','', $html);
+
+        $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '', $html);
+        echo preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '', $content);
+
+        // echo $string;
+    }
+
 }
 

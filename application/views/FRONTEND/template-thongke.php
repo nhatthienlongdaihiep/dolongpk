@@ -8,7 +8,7 @@
     <script language="javascript" type="text/javascript" src="<?=PATH_URL?>static/js/thongke/jquery.js"></script>
     <script language="javascript" type="text/javascript" src="<?=PATH_URL?>static/js/thongke/thongke-script.js"></script>
     <link rel="stylesheet" type="text/css" href="<?=PATH_URL?>static/js/popup/popup-style.min.css">
-    <script type="text/javascript" src="<?=PATH_URL?>static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="<?=PATH_URL?>static/js/jquery-1.11.3.min.js"></script>
     <script src="<?=PATH_URL?>static/js/jquery.popupoverlay.js"></script>
     <script type="text/javascript" src="<?=PATH_URL?>static/js/popup/jquery.bpopup.min.js"></script>
     <link rel="stylesheet" href="<?=PATH_URL.'static/css/admin/'?>styles.css" type="text/css">

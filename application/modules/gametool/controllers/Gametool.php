@@ -12,10 +12,7 @@ class Gametool extends MX_Controller
             header('Location: ' . PATH_URL . 'admincp/login');
             return false;
         }              
-        $this->secutity_gt();
         $this->load->model($this->module . "_model", "model");
-        $this->load->model('admincp_modules/admincp_modules_model');
-        $this->load->model("gametool_model");
         $this->template->set_template("template_thongke");         
                 
     }
@@ -36,17 +33,17 @@ class Gametool extends MX_Controller
     }
 
     function naptien(){
-        $config['total_rows'] = $this->gametool_model->getTotal_naptien();
+        $config['total_rows'] = $this->model->getTotal_naptien();
         $config['per_page'] = 10;
         $start=$this->input->get('p');
         
         $data['pageLink']=pagination($config['total_rows'], $start, $config['per_page']);
         //pr($data['pageLink'],1);
         $start==0?$start=0:$start = $start-1;
-        $data['result']= $this->gametool_model->list_naptien($config['per_page'], $start);
+        $data['result']= $this->model->list_naptien($config['per_page'], $start);
         //pr($data['result'],1);
        
-        $data['servers'] = $this->gametool_model->fetch('*', PREFIX . "servers");
+        $data['servers'] = $this->model->fetch('*', PREFIX . "servers");
         $this->template->write('title','Nạp tiền'.' | '.getSiteName());
         $this->template->write_view('content','FRONTEND/naptien', $data);
         $this->template->render();
@@ -54,38 +51,50 @@ class Gametool extends MX_Controller
 
     function naptienAjax(){
         //pr($_POST,1);
-        $soluongknb = addslashes( trim( $_POST['soluongknb'] ) );
-        $server_id = addslashes( trim( $_POST['server'] ) );
-        $username = addslashes( trim( $_POST['name'] ) );
-        $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
-        $url = getServiceURL($server, "Naptien");
+        $soluongknb = $_POST['soluongknb'];
+        $server_id = $_POST['server'];
+        $username = $_POST['name'];     
+        $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
         //pr($url);
         $user = $this->model->get('*',PREFIX.'web_users', "`username` = '$username' AND status = 1 ");
         if($user)
         {
-            $user = $this->model->get('id,username', PREFIX.'web_users', "`username` = '$username' AND status = 1 ");
-            $this->load->model("servers/servers_model");
 
+
+            // $urlAPI = "http://$server->url_service/api_tan.php";
+            // $result = file_get_contents($urlAPI);
+            // pr($result,1);
 
             $gamename = $username;
-      
-            $knb = $soluongknb;
+            $knb = str_replace('.', '',$soluongknb);
 
-            //pr($knb,1);
+            $md5user_str =md5($username.'@^*%AH_TruyMong%*^@');
+            $character = $username.'_'.$md5user_str;
 
-            $username2 = md5($username."tien<->datnn^**^@@^");
+            $sid = $server->idplay;
+            $gold = $knb;
+            $money = 0;
+            $time = time();
+            $key_login = "dGVhbWRldjIwMTU";
 
-            $character = $username."_".$username2;
+            $sign = md5($time.$sid.$character.$key_login.$gold);
 
             $data = array(
-                    "account" => $character,
-                    "soknb" => $knb
-                );
+                    "user" => $character,
+                    "sid" => $sid,
+                    "gold" => $gold,
+                    "money" => $money,
+                    "time"  =>  time(),
+                    "sign"  =>  $sign
+                );  
+
             pr($data);
-            $urlAPI = "http://$server->url_service/naptien.php";
+            $urlAPI = "http://$server->url_service/api_add_gold.php";
+            // $urlAPI = "http://$server->url_service/api_add_gold.php?user=$character&sid=$sid&sign=sign&time=$time&gold=$gold";
+            // $result = file_get_contents($urlAPI);
             pr($urlAPI);
-            $result = cURLGet($urlAPI, $data);     
-            // pr($result);
+            $result = cURLGet($urlAPI, $data);
+            pr($result,1);
             if($result != 'ok')
                 {
                     $data = array(
@@ -103,7 +112,7 @@ class Gametool extends MX_Controller
                    $data = array(
                         "poster" => $this->session->userdata('userInfo'),
                         "name"  =>  $username,
-                        "knb"   =>  $soluongknb,
+                        "knb"   =>  $knb,
                         "sid"   =>  $server_id,
                         "created" => date("Y-m-d H:i:s", time())
                         );
@@ -119,18 +128,18 @@ class Gametool extends MX_Controller
 
      function themvatpham(){
 		
-     	$config['total_rows'] = $this->gametool_model->getTotal_Table('cli_log_gmt_items');
+     	$config['total_rows'] = $this->model->getTotal_Table('cli_log_gmt_items');
         //pr($config['total_rows'] ,1);
         $config['per_page'] = 10;
         $start=$this->input->get('p');
         $data['pageLink']=pagination($config['total_rows'], $start, $config['per_page']);
         //pr($data['pageLink'],1);
         $start==0?$start=0:$start = $start-1;
-        $data['result']= $this->gametool_model->list_Data('cli_log_gmt_items',$config['per_page'], $start);
+        $data['result']= $this->model->list_Data('cli_log_gmt_items',$config['per_page'], $start);
         //pr($data['result'],1);
      	
         
-        $data['servers'] = $this->gametool_model->fetch('*', PREFIX . "servers");
+        $data['servers'] = $this->model->fetch('*', PREFIX . "servers");
         $this->template->write('title','Nạp tiền'.' | '.getSiteName());
         $this->template->write_view('content','FRONTEND/themvatpham', $data);
         $this->template->render();
@@ -138,59 +147,72 @@ class Gametool extends MX_Controller
 
     function themvatphamAjax(){
         //pr($_POST);
-        $itemid = addslashes( trim( $_POST['itemid'] ) );
-        $soluong = addslashes( trim( $_POST['soluong'] ) );
-        $server_id = addslashes( trim( $_POST['server'] ) );
-        $username = strtolower( addslashes( trim( $_POST['name'] ) ) );
+        $itemid = $_POST['itemid'];
+        $soluong = $_POST['soluong'];
+        $server_id = $_POST['server'];
+        $username = strtolower($_POST['name']);        
 
-        $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
-        $url = getServiceURL($server, "Item_GMInsert");
+        $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
         //pr($url);
         $user = $this->model->get('id', PREFIX.'web_users', "`username` = '$username' AND status = 1 ");
         if($user)
         {
             
             $gamename = $username;
-            $username2 = md5($username."tien<->datnn^**^@@^");
 
-            $character = $username."_".$username2;
+            $md5user_str =md5($username.'@^*%AH_TruyMong%*^@');
+            $character = $username.'_'.$md5user_str;
+            
+
+            $sid = $server->idplay;
+            $itemId = $itemid;
+            $soluong = $soluong;
+            $key_login = "dGVhbWRldjIwMTU";
+            $time = time();
+            $sign = md5($time.$sid.$character.$key_login.$itemId);
+            $content = 'Quà gửi';
+
 
             $data = array(
-                    "account" => $character,
-                    "item" => $itemid,
-                    "sl" => $soluong
+                    "user" => $character,
+                    "itemId" => $itemId,
+                    "count" => $soluong,
+                    "time"  => $time,
+                    "sid"   =>  $sid,
+                    "sign"  =>  $sign,
+                    "content"   =>  $content
                 );
             pr($data);
-            $urlAPI = "http://$server->url_service/additem.php";
+            $urlAPI = "http://$server->url_service/api_send_item.php";
             pr($urlAPI);
             $result = cURLGet($urlAPI, $data);  
             pr($result);
-                 if($result != 'ok')
-                    {
-                        $data = array(
-                        "poster" => $this->session->userdata('userInfo'),
-                        "name"  =>  $username,
-                        "item" => $itemid,
-                        "total"   =>  -1,
-                        "sid"   =>  $server_id,
-                        "created" => date("Y-m-d H:i:s", time())
-                        );
-                        $this->db->insert("cli_log_gmt_items", $data);
-                        echo $result;
-                    }
-                else
-                    {
-                         $data = array(
-                        "poster" => $this->session->userdata('userInfo'),
-                        "name"  =>  $username,
-                        "item" => $itemid,
-                        "total"   =>  $soluong,
-                        "sid"   =>  $server_id,
-                        "created" => date("Y-m-d H:i:s", time())
-                        );
-                        $this->db->insert("cli_log_gmt_items", $data);
-                        echo "Thêm vật phẩm thành công";
-                    }
+            if($result != 'ok')
+            {
+                $data = array(
+                "poster" => $this->session->userdata('userInfo'),
+                "name"  =>  $username,
+                "item" => $itemid,
+                "total"   =>  -1,
+                "sid"   =>  $server_id,
+                "created" => date("Y-m-d H:i:s", time())
+                );
+                $this->db->insert("cli_log_gmt_items", $data);
+                echo $result;
+            }
+            else
+            {
+                 $data = array(
+                "poster" => $this->session->userdata('userInfo'),
+                "name"  =>  $username,
+                "item" => $itemid,
+                "total"   =>  $soluong,
+                "sid"   =>  $server_id,
+                "created" => date("Y-m-d H:i:s", time())
+                );
+                $this->db->insert("cli_log_gmt_items", $data);
+                echo "Thêm vật phẩm thành công";
+            }
         }
         else
         {
@@ -200,18 +222,18 @@ class Gametool extends MX_Controller
 
      function inform_all(){
         
-        $config['total_rows'] = $this->gametool_model->getTotal_Table('cli_log_gmt_inform_all');
+        $config['total_rows'] = $this->model->getTotal_Table('cli_log_gmt_inform_all');
         //pr($config['total_rows'] ,1);
         $config['per_page'] = 10;
         $start=$this->input->get('p');
         $data['pageLink']=pagination($config['total_rows'], $start, $config['per_page']);
         //pr($data['pageLink'],1);
         $start==0?$start=0:$start = $start-1;
-        $data['result']= $this->gametool_model->list_Data('cli_log_gmt_inform_all',$config['per_page'], $start);
+        $data['result']= $this->model->list_Data('cli_log_gmt_inform_all',$config['per_page'], $start);
         //pr($data['result'],1);
         
         
-        $data['servers'] = $this->gametool_model->fetch('*', PREFIX . "servers");
+        $data['servers'] = $this->model->fetch('*', PREFIX . "servers");
         $this->template->write('title','Nạp tiền'.' | '.getSiteName());
         $this->template->write_view('content','FRONTEND/inform_all', $data);
         $this->template->render();
@@ -223,8 +245,7 @@ class Gametool extends MX_Controller
         $title = addslashes( trim( $_POST['title'] ) );
         $server_id = addslashes( trim( $_POST['server'] ) ); 
 
-        $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
-        $url = getServiceURL($server, "Item_GMInsert");
+        $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
   
         $data = array(
           "subject" => $title,
@@ -269,11 +290,10 @@ function getprofileuser(){
             $server_id = addslashes( trim( $_POST['server'] ) );
         $data['result']=array();
        // $username = strtolower($_POST['name']); 
-        $server_all =  $this->gametool_model->fetch('*', PREFIX . "servers");       
+        $server_all =  $this->model->fetch('*', PREFIX . "servers");       
         if(isset($server_id)){
             if($server_id!=0){
-                $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
-                $url = getServiceURL($server, "GetProfileUser");
+                $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
                 $fieldGame = array(
                     'serviceUser'   =>  SERVICE_USER_NAP_TIEN,
                     'servicePass'   =>  SERVICE_PASS_NAP_TIEN,
@@ -305,10 +325,10 @@ function getprofileuser(){
             $server_id = addslashes( trim( $_POST['server'] ) );
         }
         $data['result']=array();
-        $server_all =  $this->gametool_model->fetch('*', PREFIX . "servers");
+        $server_all =  $this->model->fetch('*', PREFIX . "servers");
         if(isset($server_id)){
             if($server_id!=0){
-                $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
+                $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
                 $urlAPI = "http://{$server->url_service}/get_register.php";
 
                 $result = file_get_contents($urlAPI);
@@ -324,7 +344,7 @@ function getprofileuser(){
         $this->template->render();        
     }
     function getprofilebyuser(){
-    $server_all =  $this->gametool_model->fetch('*', PREFIX . "servers");       
+    $server_all =  $this->model->fetch('*', PREFIX . "servers");       
     if(isset($_POST['server']))
         $server_id = addslashes( trim( $_POST['server'] ) );
     $data['result']=array();
@@ -333,7 +353,7 @@ function getprofileuser(){
         $username = addslashes( trim( $_POST['name'] ) );
  
         if(isset($username)){
-            $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
+            $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
            if($server){
                 $gamename = $username;
                 $dt = array(
@@ -372,7 +392,7 @@ function getprofileuser(){
         //pr($_POST);
        // $itemid = $_POST['itemid'];
         //$soluong = $_POST['server'];
-    $server_all =  $this->gametool_model->fetch('*', PREFIX . "servers");       
+    $server_all =  $this->model->fetch('*', PREFIX . "servers");       
             
 
     if(isset($_POST['server']))
@@ -386,9 +406,7 @@ function getprofileuser(){
    
             
         if(@$server_id!=0){
-            $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
-            
-            $url = getServiceURL($server, "GetProfileUserByPlayerName");
+            $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
 
             $fieldGame = array(
                 'serviceUser'   =>  SERVICE_USER_NAP_TIEN,
@@ -413,11 +431,10 @@ function getprofileuser(){
             $server_id = addslashes( trim( $_POST['server'] ) );
         $data['result']=array();
        // $username = strtolower($_POST['name']); 
-        $server_all =  $this->gametool_model->fetch('*', PREFIX . "servers");       
+        $server_all =  $this->model->fetch('*', PREFIX . "servers");       
         if(isset($server_id)){
             if($server_id!=0){
-                $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
-                $url = getServiceURL($server, "ReportLevelServer");
+                $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
                 $fieldGame = array(
                     'serviceUser'   =>  SERVICE_USER_NAP_TIEN,
                     'servicePass'   =>  SERVICE_PASS_NAP_TIEN,
@@ -442,14 +459,14 @@ function getprofileuser(){
     }
     function themnhieuvatpham(){
     	
-    	$config['total_rows'] = $this->gametool_model->getTotal_Table('cli_log_gmt_items');
+    	$config['total_rows'] = $this->model->getTotal_Table('cli_log_gmt_items');
         //pr($config['total_rows'] ,1);
         $config['per_page'] = 10;
         $start=$this->input->get('p');
         $data['pageLink']=pagination($config['total_rows'], $start, $config['per_page']);
         //pr($data['pageLink'],1);
         $start==0?$start=0:$start = $start-1;
-        $data['result']= $this->gametool_model->list_Data('cli_log_gmt_items',$config['per_page'], $start);
+        $data['result']= $this->model->list_Data('cli_log_gmt_items',$config['per_page'], $start);
     	
         $data["servers"] = $this->model->fetch('*', PREFIX . "servers");
         $this->template->write('title','Nạp tiền'.' | '.getSiteName());
@@ -463,8 +480,7 @@ function getprofileuser(){
         $server_id = addslashes( trim( $_POST['server'] ) );
         $username = strtolower( addslashes( trim( $_POST['name'] ) ) ); 
         $textAr = explode("\n", $username);  
-        $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
-        $url = getServiceURL($server, "Item_GMInsert");
+        $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
         if($_POST['sum']>0)
         {
             for($so = 1; $so <= $_POST['sum']; $so++) 
@@ -547,14 +563,14 @@ function getprofileuser(){
     function useronline(){
         if(1){
             $this->session->set_userdata('pwgt','bachluyenthanhtien');
-            $data['servers'] = $this->gametool_model->fetch('*', PREFIX . "servers", "is_cron = 0");
+            $data['servers'] = $this->model->fetch('*', PREFIX . "servers", "is_cron = 0");
             $merge = array();
             if($data){
                $data['resultnow'] = '';
-               $data['serversnow'] = $this->gametool_model->fetch('*', PREFIX . "servers", "is_cron = 0");
+               $data['serversnow'] = $this->model->fetch('*', PREFIX . "servers", "is_cron = 0");
                $day = date("Y-m-d 00:00:00", strtotime("-1 day", time()));
-               $data['result_full'] = $this->gametool_model->fetch("*", "cli_log_useronlinejob", "created >= '$day'");       
-               $data['time'] =   $this->gametool_model->getlast_useronline();    
+               $data['result_full'] = $this->model->fetch("*", "cli_log_useronlinejob", "created >= '$day'");       
+               $data['time'] =   $this->model->getlast_useronline();    
             }
             else{
                 $data['result'] = '';
@@ -584,22 +600,22 @@ function getprofileuser(){
         {
             $server_id = addslashes( trim( $_POST['server'] ) );
             //pr($server_id,1);
-            $config['total_rows'] = $this->gametool_model->getTotal_useronline();
+            $config['total_rows'] = $this->model->getTotal_useronline();
             //pr($config['total_rows'] ,1);
             $config['per_page'] = 144;
             $start=$this->input->post('page');
             $data['pageLink']=pagination($config['total_rows'], $start, $config['per_page']);
             //pr($data['pageLink'],1);
             $start==0?$start=0:$start = $start-1;
-            $data['result']= $this->gametool_model->list_useronline($config['per_page'], $start);
+            $data['result']= $this->model->list_useronline($config['per_page'], $start);
             //pr(last_query(),1);
             //pr($data['result'],1);
             //pr(last_query(),1);
             if($_POST['server'] ==0 )
-                $data['servers'] = $this->gametool_model->fetch('*', PREFIX . "servers");
+                $data['servers'] = $this->model->fetch('*', PREFIX . "servers");
             else
-                $data['servers'] = $this->gametool_model->fetch('*', PREFIX . "servers", "id = {$_POST['server']}");
-            $data['time'] = $this->gametool_model->getGroupBy_useronline($config['per_page'], $start);
+                $data['servers'] = $this->model->fetch('*', PREFIX . "servers", "id = {$_POST['server']}");
+            $data['time'] = $this->model->getGroupBy_useronline($config['per_page'], $start);
             
             //pr($data['servers']);
             //pr($data['time'],1);
@@ -623,7 +639,6 @@ function getprofileuser(){
                     'serviceUser'=> SERVICE_USER_NAP_TIEN,
                     'servicePass'=> SERVICE_PASS_NAP_TIEN
                     );
-                    $url = getServiceURL($server[$i], 'Overview');                   
                     $tmp = strip_tags(post($url, $params));
                     $tmp = json_decode($tmp);
                     $rs[$i] = NULL;
@@ -654,8 +669,7 @@ function getprofileuser(){
         }            
         else
         {
-                $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
-                $url = getServiceURL($server, "UserOnline");
+                $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
                 $fieldGame = array(
                     'serviceUser'   =>  SERVICE_USER_NAP_TIEN,
                     'servicePass'   =>  SERVICE_PASS_NAP_TIEN
@@ -670,7 +684,7 @@ function getprofileuser(){
    
     function blockAccount(){
 
-        $data['server'] = $this->gametool_model->fetch('*', PREFIX . "servers");
+        $data['server'] = $this->model->fetch('*', PREFIX . "servers");
 
         $this->template->write('title','Nạp tiền'.' | '.getSiteName());
         $this->template->write_view('content','FRONTEND/blockAccount', $data);
@@ -688,7 +702,7 @@ function getprofileuser(){
         );
         // pr($params);
 
-        $server = $this->gametool_model->get('*', PREFIX.'servers', "id = $server_id");
+        $server = $this->model->get('*', PREFIX.'servers', "id = $server_id");
         //pr($server,1);
         $url_service = $server->ip . ":".$server->port_service."/";
         //pr($url_service,1);
@@ -740,7 +754,7 @@ function getprofileuser(){
         
     }
     function optionplaygame(){
-        $data['servers']= $this->gametool_model->fetch('*', PREFIX . "servers");
+        $data['servers']= $this->model->fetch('*', PREFIX . "servers");
         $this->template->write_view('content','FRONTEND/optionplaygame',$data);
         $this->template->render();
     }
@@ -785,12 +799,11 @@ function getprofileuser(){
 
    
     public  function UserOnlineJob(){
-        $servers = $this->gametool_model->fetch('*', PREFIX.'servers', "");
+        $servers = $this->model->fetch('*', PREFIX.'servers', "");
         if($servers)
         {
             $now =  date('Y-m-d H:i:s', time());
             foreach ($servers as $server) {
-                $url = getServiceURL($server, "CheckOnline");
                 //pr($server);
                 $fieldGame = array(
                     'serviceUser'   =>  SERVICE_USER_NAP_TIEN,
@@ -820,12 +833,11 @@ function getprofileuser(){
     }
 
     public  function UserOnlineJob_Now(){
-        $servers = $this->gametool_model->fetch('*', PREFIX.'servers', "");
+        $servers = $this->model->fetch('*', PREFIX.'servers', "");
         if($servers)
         {
             $now =  date('Y-m-d H:i:s', time());
             foreach ($servers as $server) {
-                $url = getServiceURL($server, "CheckOnline");
                 //pr($server);
                 $fieldGame = array(
                     'serviceUser'   =>  SERVICE_USER_NAP_TIEN,

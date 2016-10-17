@@ -89,6 +89,7 @@
 </div>
     <!-- End tab nhanvat section-->
     <!-- tinh nang nhanvat section-->
+<?php if(0){?>
 <div class="tinh-nang wow fadeInUp">
     <div class="ziliao">
         <div class="zl show" id="zl-1">
@@ -153,3 +154,4 @@
         </div>
     </div>
 </div>
+<?php }?>

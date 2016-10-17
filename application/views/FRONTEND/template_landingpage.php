@@ -8,7 +8,7 @@
 <meta property="fb:admins" content="1234" />
 <meta property="fb:app_id" content="197368480622157"/>
 <meta property="og:description" content="<?php echo $meta_description?>"/>
-<meta property="og:image" content="<?php echo PATH_URL;?>static/images/account/hi.png"/>
+<meta property="og:image" content="<?php echo PATH_URL;?>static/fb_banner.jpg"/>
 <meta property="og:site_name" content="<?php echo $title?>"/>
 <meta property="og:locale" content="vi_VN"/>
 <meta property="og:url" content="<?php echo PATH_URL;?>">
@@ -59,7 +59,7 @@
 </div>
 
 <div class="fixed-logo" style="z-index:1000;">
-    <img src="<?=PATH_URL?>static/teaser/images/logo.png" alt="">
+    <img src="<?=PATH_URL?>static/dolongpk_logo.png" alt="">
 </div> <!-- end fixed-logo -->
 
 <div id="spage1" data-scroll-index="0">
@@ -69,7 +69,7 @@
             <li><a href="#spage4"><img src="<?=PATH_URL?>static/teaser/images/btn-page2.png" alt=""></a></li>
             <!-- <li><a href="#spage2"><img src="<?=PATH_URL?>static/teaser/images/btn-page3.png" alt=""></a></li> -->
             <li><a href="#spage5"><img src="<?=PATH_URL?>static/teaser/images/btn-page4.png" alt=""></a></li>
-            <li><a href="#spage6"><img src="<?=PATH_URL?>static/teaser/images/btn-page5.png" alt=""></a></li>
+            <li><a href="javascript:;" onclick='PopupCtrl.PopupLogin();' title='Đăng ký'><img src="<?=PATH_URL?>static/teaser/images/btn-page8.png" alt=""></a></li>
         </ul>
         <div class="btn-play-sl1" style='display:none'>
             <div class="wow animated fadeIn" data-wow-delay="2.7s">
@@ -432,10 +432,10 @@
             <img src="<?=PATH_URL?>static/teaser/images/tt-sl6.png" alt="">
         </div> <!-- end tt-sl6 -->
         <div class="btn">
-            <a href="https://www.facebook.com/dolongky.vtc/?fref=ts" target="_blank" class="wow animated bounceInLeft"><img src="<?=PATH_URL?>static/teaser/images/btn-fb.png" alt=""></a>
+            <a href="https://www.facebook.com/%C4%90%E1%BB%93-Long-Pk-335698360109844/?fref=ts" target="_blank" class="wow animated bounceInLeft"><img src="<?=PATH_URL?>static/teaser/images/btn-fb.png" alt=""></a>
           
             
-            <a href="https://www.facebook.com/groups/dolongky.vtcgame.vn/" target="_blank" class="wow animated bounceInRight"><img src="<?=PATH_URL?>static/teaser/images/btn-gift.png" alt=""></a> 
+            <!-- <a href="https://www.facebook.com/groups/dolongky.vtcgame.vn/" target="_blank" class="wow animated bounceInRight"><img src="<?=PATH_URL?>static/teaser/images/btn-gift.png" alt=""></a>  -->
         </div>
 
     </div>
@@ -599,6 +599,8 @@ echo $this->load->view('FRONTEND/popup_giftcode');
 <!-- END OF POPUP ACCOUNT -->
 
 </div>
+<div class="tracking" style="position:absolute;bottom:0px">
 <?php $this->load->view('FRONTEND/modules/tracking');?>
+</div>
 </body>
 </html> 

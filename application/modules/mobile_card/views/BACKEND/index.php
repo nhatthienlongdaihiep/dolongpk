@@ -16,7 +16,7 @@
 			<hr/>
 			<ul>
 				<?php if($result) foreach ($result as $key => $value) {?>
-					<li><input value="<?php echo $value->id;?>" name="pay_method" type="radio" <?=$value->status == 1 ? 'checked="checked"' : ''?> class="server-promotion"><a href="<?//=PATH_URL.'admincp/'.$module.'/update/'.$value->id?>"><?php echo $value->name;?></a></li>
+					<li><input value="<?php echo $value->id;?>" name="pay_method" type="radio" <?=$value->status == 1 ? 'checked="checked"' : ''?> class="server-promotion"><a href="javascript:;"><?php echo $value->name;?></a></li>
 				<?php }?>
 			</ul>
 			<div class="clearAll"></div>
@@ -53,7 +53,7 @@
 		if(!$('[name="pay_method"]').is(':checked')){
 			// $('.error').html("<h1>Vui lòng chọn cổng thanh toán</h1>");
 		}
-		$('#btn-pro').live('click', function(e) {
+		$('#btn-pro').on('click', function(e) {
 			e.preventDefault();
 			var id = $('[name="pay_method"]:checked').val();
 			if(id){

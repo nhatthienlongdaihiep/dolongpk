@@ -27,8 +27,8 @@ body {
 
 #header {
     /*background: url(../images/bg-header.jpg) no-repeat center top;*/
-    background: url(../images/bg-header_new.jpg) no-repeat center top;
-    height: 931px;
+    background: url(../images/bg.jpg) no-repeat center top;
+    height: 810px;
     position: relative;
 }
 
@@ -40,7 +40,7 @@ body {
 /*css menu*/
 .menu {
     position: absolute;
-    top: 17px;
+    top: 6px;
     width: 950px;
     height: 50px;
     margin-left: 60px;
@@ -49,7 +49,7 @@ body {
     .menu li {
         display: inline;
         float: left;
-        margin-right: 40px;
+        margin-right: 30px;
     }
 
         .menu li a {
@@ -61,14 +61,14 @@ body {
         .menu li i {
             font-family: 'UTM Aptima';
             font-size: 15px;
-            color: #4a5985; /*#3f4876 #d9e3ff*/
+            color: #ddc690 ; /*#3f4876 #d9e3ff #4a5985 */
             text-transform: uppercase;
             font-style: normal;
             float: left;
         }
 
         .menu li:first-child span {
-            background: url(../images/icon-menu_new.png) no-repeat;
+            background: url(../images/icon-menu_new2.png) no-repeat;
             width: 48px;
             height: 35px;
             display: block;
@@ -78,7 +78,7 @@ body {
         }
 
         .menu li:nth-child(2) span {
-            background: url(../images/icon-menu_new.png) -48px 0px no-repeat;
+            background: url(../images/icon-menu_new2.png) -48px 0px no-repeat;
             width: 48px;
             height: 35px;
             display: block;
@@ -88,7 +88,7 @@ body {
         }
 
         .menu li:nth-child(3) span {
-            background: url(../images/icon-menu_new.png) -96px 0px no-repeat;
+            background: url(../images/icon-menu_new2.png) -96px 0px no-repeat;
             width: 49px;
             height: 35px;
             display: block;
@@ -98,14 +98,15 @@ body {
         }
 
         .menu li:nth-child(4), .menu li:nth-child(4):after {
-            background: url(../images/logo_new.png) no-repeat;
-            width: 139px;
-            height: 176px;
+            background: url(../../dolongpk_logo.png) no-repeat;
+            width: 210px;
+            height: 140px;
+            cursor: pointer;
         }
 
             .menu li:nth-child(4):after {
                 position: absolute;
-                left: 360px;
+                left: 339px;
                 content: '';
                 animation: cirZoom infinite linear 2s .5s;
                 -moz-animation: cirZoom infinite linear 2s .5s;
@@ -178,7 +179,7 @@ body {
 }
 
 .menu li:nth-child(5) span {
-    background: url(../images/icon-menu_new.png) -146px 0px no-repeat;
+    background: url(../images/icon-menu_new2.png) -146px 0px no-repeat;
     width: 50px;
     height: 35px;
     display: block;
@@ -188,7 +189,7 @@ body {
 }
 
 .menu li:nth-child(6) span {
-    background: url(../images/icon-menu_new.png) -196px 0px no-repeat;
+    background: url(../images/icon-menu_new2.png) -196px 0px no-repeat;
     width: 37px;
     height: 35px;
     display: block;
@@ -198,7 +199,7 @@ body {
 }
 
 .menu li:last-child span {
-    background: url(../images/icon-menu_new.png) -233px 0px no-repeat;
+    background: url(../images/icon-menu_new2.png) -233px 0px no-repeat;
     width: 16px;
     height: 35px;
     display: block;
@@ -1083,7 +1084,7 @@ p.anh-nv4, p.anh-nv3, p.anh-nv2, p.anh-nv1 {
 }
 
 .content div h2, .content div h3 {
-    color: #354061;
+    color: #efd189;
     font-size: 30px;
     font-family: 'UTM Aptima';
     font-weight: normal;
@@ -1096,7 +1097,7 @@ p.anh-nv4, p.anh-nv3, p.anh-nv2, p.anh-nv1 {
     line-height: 22px;
     text-align: left;
     margin-top: 24px;
-    color: #354061;
+    color: #a7a08d;
     font-family: tahoma;
 }
 

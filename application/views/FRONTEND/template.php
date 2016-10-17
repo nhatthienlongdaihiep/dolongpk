@@ -8,7 +8,7 @@
 <meta property="fb:admins" content="1234" />
 <meta property="fb:app_id" content="197368480622157"/>
 <meta property="og:description" content="<?php echo $meta_description?>"/>
-<meta property="og:image" content="<?php echo PATH_URL;?>static/images/account/hi.png"/>
+<meta property="og:image" content="<?php echo PATH_URL;?>static/fb_banner.jpg"/>
 <meta property="og:site_name" content="<?php echo $title?>"/>
 <meta property="og:locale" content="vi_VN"/>
 <meta property="og:url" content="<?php echo PATH_URL;?>">
@@ -56,34 +56,34 @@ var uri = "<?=$this->uri->segment(1)?>";
 <!-- <script type="text/javascript" src="<?=PATH_URL?>static/home/js/utils.js"></script> --> <!-- Tam thoi tat by Tan -->
 
 </head>
-<body class="index">  
+<body class="index" style='background:#16151b'>  
     <div id="divHeader">
         <!-- <div class="wrap-header" id='wrap-header-extend'>
             <div class="banner-left_" id="banner-left"><a href="https://dolongky.vtcgame.vn/teaser/?utm_source=teaser&amp;utm_medium=banner_vtcgame&amp;utm_content=1&amp;utm_campaign=NoiBo" target="_blank" style="display: block; opacity: 0.0912868;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/27/160x600.png"></a><a href="https://vantrungca.vtcgame.vn/landing06/?utm_source=landing06&amp;utm_medium=banner_vtcgame&amp;utm_content=240616&amp;utm_campaign=NoiBo" target="_blank" style="display: none;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/26/160x600.png"></a><a href="https://phidoi2.vtcgame.vn/landing03/?utm_source=landing03&amp;utm_medium=banner_vtcgame&amp;utm_content=1&amp;utm_campaign=NoiBo" target="_blank" style="display: none;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/16/160x600pd.png"></a><a href="https://sv.vtcgame.vn/update/?utm_source=update&amp;utm_medium=banner_vtcgame&amp;utm_content=120516&amp;utm_campaign=NoiBo" target="_blank" style="display: none;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/14/160x600sv.png"></a><a href="https://as.vtcgame.vn/landing/?utm_source=landing&amp;utm_medium=banner_vtcgame&amp;utm_content=1&amp;utm_campaign=NoiBo" target="_blank" style="display: none;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/09/09/160x600.png"></a><a href="https://phidoi2.vtcgame.vn/?utm_source=homepage&amp;utm_medium=banner_vtcgame&amp;utm_content=1&amp;utm_campaign=NoiBo" target="_blank" style="display: block; opacity: 0.908713;"><img width="160" height="600" src="https://vtcgame.vn/media/vtcgate/2016/08/01/160x600.png"></a></div>
         </div> -->
         <div class="fix-right_">        
             <ul>            
-                <li>   
+                <!-- <li>   
                     <span class="green"> Download VTC Launcher </span>                
-                    <a href="" target="_blank"><img src="https://static.vtcgame.vn/header2/images/img-download-fix-right.png"></a>            
+                    <a href="" target="_blank"><img src="<?=PATH_URL?>static/home/images/img-download-fix-right.png"></a>            
                 </li>            
                 <li> 
                     <span class="purple">Vòng Quay May Mắn</span>                
-                    <a href="" target="_blank"><img src="https://static.vtcgame.vn/header2/images/img-vongquay-fix-right.png"></a>
+                    <a href="" target="_blank"><img src="<?=PATH_URL?>static/home/images/img-vongquay-fix-right.png"></a>
                 </li>
                 <li>
                     <span class="orange">Nhiệm Vụ</span>
-                    <a href="" target="_blank"><img src="https://static.vtcgame.vn/header2/images/img-nhiemvu-fix-right.png"></a>
+                    <a href="" target="_blank"><img src="<?=PATH_URL?>static/home/images/img-nhiemvu-fix-right.png"></a>
                 </li>
                 <li>
                     <span class="yellow">Ranking</span>
                     <a href="" target="_blank">
-                        <img src="https://static.vtcgame.vn/header2/images/img-bxh-fix-right.png">
+                        <img src="<?=PATH_URL?>static/home/images/img-bxh-fix-right.png">
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <span class="blue">Facebook</span>
-                    <a href="" target="_blank"><img src="https://static.vtcgame.vn/header2/images/img-fb-fix-right.png"></a>
+                    <a href="https://www.facebook.com/%C4%90%E1%BB%93-Long-Pk-335698360109844/?fref=ts" target="_blank"><img src="<?=PATH_URL?>static/home/images/img-fb-fix-right.png"></a>
                 </li>
             </ul>
         </div>
@@ -105,7 +105,7 @@ var uri = "<?=$this->uri->segment(1)?>";
 
 <div class="slider-home">
     <div id="owl-demo" class="owl-carousel">
-        <div class="item"><img src="<?=PATH_URL?>static/home/images/1234(1).png"></div>
+        <div class="item"><img src="<?=PATH_URL?>static/home/images/1234(2).png"></div>
     </div>
 </div>
         <!-- End banner section-->
@@ -115,11 +115,11 @@ var uri = "<?=$this->uri->segment(1)?>";
                 <ul>
                     <li><a href="<?=PATH_URL?>trang-chu"><span></span><i>trang chủ</i></a></li>
                     <li><a href="<?=PATH_URL?>tin-tuc"><span></span><i>tin tức</i></a></li>
-                    <li><a href=""><span></span><i>đặc sắc</i></a></li>
-                    <li onclick="backToHome();" style="margin-left: -39px;"></li>
+                    <li style='margin:0px;'><a href=""><span></span><i>đặc sắc</i></a></li>
+                    <li onclick="backToHome();" style="margin:0px;"></li>
                     <li><a href="<?=PATH_URL?>su-kien"><span></span><i>sự kiện</i></a></li>
                     <li><a href=""><span></span><i>tân thủ</i></a></li>
-                    <li><a href="" target="_blank"><span></span><i>fanpage</i></a></li>
+                    <li><a href="https://www.facebook.com/%C4%90%E1%BB%93-Long-Pk-335698360109844/?fref=ts" target="_blank"><span></span><i>fanpage</i></a></li>
                 </ul>
             </div>
             <!-- End menu section -->
@@ -204,7 +204,7 @@ var uri = "<?=$this->uri->segment(1)?>";
             <!-- facebook -->
             <div class="facebook wow fadeInUp">
                 <div class="fb-page"
-                     data-href="https://www.facebook.com/hoathiencot.vtcgame.vn/?fref=ts"
+                     data-href="https://www.facebook.com/%C4%90%E1%BB%93-Long-Pk-335698360109844/?fref=ts"
                      data-width="250"
                      data-small-header="false"
                      data-adapt-container-width="true"
@@ -212,8 +212,8 @@ var uri = "<?=$this->uri->segment(1)?>";
                      data-show-facepile="true"
                      data-show-posts="false">
                     <div class="fb-xfbml-parse-ignore">
-                        <blockquote cite="https://www.facebook.com/hoathiencot.vtcgame.vn/?fref=ts">
-                            <a href="https://www.facebook.com/hoathiencot.vtcgame.vn/?fref=ts">Hoa Thiên Cốt</a>
+                        <blockquote cite="https://www.facebook.com/%C4%90%E1%BB%93-Long-Pk-335698360109844/?fref=ts">
+                            <a href="https://www.facebook.com/%C4%90%E1%BB%93-Long-Pk-335698360109844/?fref=ts">Đồ Long PK</a>
                         </blockquote>
                     </div>
                 </div>
@@ -236,7 +236,7 @@ var uri = "<?=$this->uri->segment(1)?>";
     <!-- footer section-->
 <!-- FOOTER -->
 <div class="footer-mautoi">
-    <div class="footerchung">
+    <div class="footerchung" style='display:none'>
         <div class="infor-left-footer">
             <a href="#" class="logovtc"><img src="<?=PATH_URL?>static/home/images/cg_logo.png"></a>
             <div class="clear"></div>
@@ -314,6 +314,8 @@ var uri = "<?=$this->uri->segment(1)?>";
 <?php echo $this->load->view('FRONTEND/popup/account');?>
 <!-- END OF POPUP ACCOUNT -->
 
+<div class="tracking" style="position:absolute;bottom:0px">
 <?php $this->load->view('FRONTEND/modules/tracking');?>
+</div>
 </body>
 </html> 

@@ -86,8 +86,8 @@ define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 /* EXTENSION BY ENGINE DIESEL */
-define('META_DESC','Web Game có sự đầu tư về hình ảnh đồ họa của nhân vật, hệ thống Boss đa dạng, Phụ Bản nhiều chưa từng thấy, cuộc chiến giữa các bộ lạc ngày càng lên tới đỉnh cao, cần người lãnh đạo cõi tiên nhân, cùng tham gia thế giới Hoàng Đồ Web để có những khoảng thời gian thư giãn tốt nhất. Và nhận được sự phục vụ tận tình chu đáo nhất từ Nhà Phát hành');
-define('META_KEY','Hoàng Đồ Web, Hoang Do Web, Game dinh cao Hoang Do Web');
+define('META_DESC','Tái hiện huyền thoại kiếm hiệp Trung Nguyên. Quần hùng hội tụ - bảo đao Đồ Long -  Hiệu lệnh thiên hạ. Chỉ có tại Đồ Long Ký! Web Game có sự đầu tư về hình ảnh đồ họa của nhân vật, hệ thống Boss đa dạng, Phụ Bản nhiều chưa từng thấy, cuộc chiến giữa các bộ lạc ngày càng lên tới đỉnh cao, cần người lãnh đạo cõi tiên nhân, cùng tham gia thế giới Đồ Long PK để có những khoảng thời gian thư giãn tốt nhất. Và nhận được sự phục vụ tận tình chu đáo nhất từ Nhà Phát hành');
+define('META_KEY','đồ long ký, do long ky, minh chủ võ lâm, minh chu vo lam, webgame kiếm hiệp, webgame kiem hiep, webgame võ hiệp, webgame vo hiep, game online moi, y thien do long ky');
 
 //DIR
 define('DIR_UPLOAD', 'static/uploads/');

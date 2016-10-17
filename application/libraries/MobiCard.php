@@ -5,7 +5,7 @@
 	  public static $_VERSION = "2.0";
 	  //Thay đổi 3 thông tin ở phía dưới
 	  public static $_MERCHANT_ID = "47885";//mã merchantsite( mã website) dăng ký trên ngân lượng
-	  public static $_MERCHANT_PASSWORD = "lamgicopass1";// Mật khẩu giao tiếp( mật khẩu khi đăng ký merchantsite)
+	  public static $_MERCHANT_PASSWORD = "e3a470c1d01c76141bf27f8c84e0b380";// Mật khẩu giao tiếp( mật khẩu khi đăng ký merchantsite)
 	  public static $_EMAIL_RECEIVE_MONEY = "trinhleminhphuc@gmail.com";// Email chính đăng ký trên Ngân Lượng
   }
   
@@ -68,7 +68,6 @@
 						'pin_card'				=> $pin_card,
 						'card_serial'			=> $card_serial,
 						'type_card'				=> $type_card,
-						
 						'ref_code'				=> $_order_id,
 						'client_fullname'		=> $client_fullname,
 						'client_email'			=> $client_email,

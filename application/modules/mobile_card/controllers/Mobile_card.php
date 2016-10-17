@@ -133,16 +133,13 @@ class Mobile_card extends MX_Controller {
 
 	public function admincp_ajaxLoadContent(){
 		$this->load->library('AdminPagination');
-		$config['total_rows'] = $this->model->getTotalsearchContent();
 		$config['per_page'] = $this->input->post('per_page');
 		$config['num_links'] = 3;
 		$config['func_ajax'] = 'searchContent';
 		$config['start'] = $this->input->post('start');
 		$this->adminpagination->initialize($config);
 
-		$result = $this->model->getsearchContent($config['per_page'],$this->input->post('start'));
 		$data = array(
-			'result'=>$result,
 			'per_page'=>$this->input->post('per_page'),
 			'start'=>$this->input->post('start'),
 			'module'=>$this->module

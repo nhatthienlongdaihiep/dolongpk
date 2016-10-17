@@ -1,0 +1,1 @@
+<iframe id="mainFrame" name="mainFrame" wmode="transparent" height="100%" width="100%" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" src="<?= $url ?>"></iframe>

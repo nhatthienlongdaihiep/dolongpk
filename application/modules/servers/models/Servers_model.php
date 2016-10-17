@@ -249,7 +249,7 @@ class Servers_model extends MY_Model {
         $gamename = $username;
         $knb = $gamecoin;
         
-        $md5user_str =md5($username.'@^*%HoanhDo%*^@');
+        $md5user_str =md5($username.'@^*%AH_TruyMong%*^@');
  		$character = $username.'_'.$md5user_str;
 
         $sid = $server->idplay;
@@ -281,7 +281,7 @@ class Servers_model extends MY_Model {
 		$server = $this->model->get("*", "cli_servers", "id = $server_id");
         $knb = $gamecoin = $soluong;
 
-        $md5user_str =md5($username.'@^*%HoanhDo%*^@');
+        $md5user_str =md5($username.'@^*%AH_TruyMong%*^@');
  		$character = $username.'_'.$md5user_str;
 
         $sid = $server->idplay;

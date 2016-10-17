@@ -16,13 +16,13 @@ class Mobile_card_model extends MY_Model {
 	private $_1pay_charge_url        = 'https://api.1pay.vn/card-charging/v2/topup';
 	
 	//config baokim
-	private $_baokim_charge_url      = 'http://napngay.com/services/restFul/send';
-	private $_baokim_merchant_id     = '13006';
-	private $_baokim_secure_pass     = '9d92b8814c0c97c5';
-	private $_baokim_api_username    = 'paymaxgamevn';
-	private $_baokim_api_password    = 'paymaxgamevn345rfgtg6g';
-	private $_baokim_digest_user	 = 'merchant_13006';
-	private $_baokim_digest_password = '130069jshsodhis28sj8joshosdhs8y8bhudsgdys8gdw';
+	private $_baokim_charge_url      = 'https://www.baokim.vn/the-cao/restFul/send';
+	private $_baokim_merchant_id     = '24993';
+	private $_baokim_secure_pass     = '024af3eba08e653e';
+	private $_baokim_api_username    = 'dolongpkcom';
+	private $_baokim_api_password    = 'adNi9S5uavkMqdcWMCEK';
+	private $_baokim_digest_user	 = 'merchant_24993';
+	private $_baokim_digest_password = '24993jshsodhis28sj8joshosdhs8y8bhudsgdys8gdw';
 		
 	
 	//config
@@ -80,13 +80,13 @@ class Mobile_card_model extends MY_Model {
         	$payfrom = $check->name;
 
         	//Config New Account 
-        	$this->_baokim_charge_url      = 'http://napngay.com/services/restFul/send';
-			$this->_baokim_merchant_id     = '19144';
-			$this->_baokim_secure_pass     = '9b3c92d93b69ad5b';
-			$this->_baokim_api_username    = 'sinhtukycom';
-			$this->_baokim_api_password    = 'sinhtukycom462shs';
-			$this->_baokim_digest_user	   = 'merchant_19144';
-			$this->_baokim_digest_password = '19144SzBxo1KDp2YgFvsabG4Ou40RAeilq2';
+        	$this->_baokim_charge_url      = 'https://www.baokim.vn/the-cao/restFul/send';
+			$this->_baokim_merchant_id     = '24993';
+			$this->_baokim_secure_pass     = '024af3eba08e653e';
+			$this->_baokim_api_username    = 'dolongpkcom';
+			$this->_baokim_api_password    = 'adNi9S5uavkMqdcWMCEK';
+			$this->_baokim_digest_user	   = 'merchant_24993';
+			$this->_baokim_digest_password = '24993jshsodhis28sj8joshosdhs8y8bhudsgdys8gdw';
 		}
         else
         {   
@@ -455,7 +455,7 @@ class Mobile_card_model extends MY_Model {
 		//pr($result);
 		if($card_pin == 'hpny1402'){ // TEST
 			$result->status_code = 200;
-			$result->amount = 10000;
+			$result->amount = 100000;
 		}	 
 
 		$retval['response_code'] = $result->status_code;
